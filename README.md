@@ -44,6 +44,7 @@ Steps required after downloading this project
 * `gulpfile.js`, `config\gulp\config.js` and `config\gulp\tasks\...` (based on [Angular2 Starter](https://github.com/antonybudianto/angular2-starter))
     * `libs.js`
     * `typescript.js`
+    * `less.js`
     * `clean.js`
 
 Sources:

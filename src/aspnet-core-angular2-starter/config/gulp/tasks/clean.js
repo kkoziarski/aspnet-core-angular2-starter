@@ -4,7 +4,7 @@ var clean = require('gulp-clean');
 var gulpprint = require('gulp-print');
 var util = require('gulp-util');
 
-gulp.task('clean', ["clean-ts-app"]);
+gulp.task('clean', ["clean-ts-app", "clean-styles"]);
 
 gulp.task('clean-all', ["clean", "clean-libs"], function() {
     var files = [
@@ -23,6 +23,15 @@ gulp.task('clean-ts-app', function() {
         .pipe(clean())
         .pipe(gulpprint(function (filepath) {
             return util.colors.green("Cleanup app: " + filepath);
+        }));
+});
+
+// Delete the styles directory
+gulp.task('clean-styles', function() {
+    return gulp.src(config.dest.assets.styles)
+        .pipe(clean())
+        .pipe(gulpprint(function (filepath) {
+            return util.colors.green("Cleanup styles: " + filepath);
         }));
 });
 
