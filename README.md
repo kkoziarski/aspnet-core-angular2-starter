@@ -16,9 +16,11 @@
 
 Sources:
 [1](https://github.com/antonybudianto/angular2-starter)
-[2](http://asp.net-hacker.rocks/2016/04/04/aspnetcore-and-angular2-part1.html)
-[3](http://www.mithunvp.com/angular-2-asp-net-core-visual-studio-code-typescript/)
-[4](https://github.com/FabianGosebrink/ASPNET-Core-Angular2-StarterTemplate)
+[2](https://angular.io/docs/ts/latest/quickstart.html)
+[3](http://asp.net-hacker.rocks/2016/04/04/aspnetcore-and-angular2-part1.html)
+[4](http://www.mithunvp.com/angular-2-asp-net-core-visual-studio-code-typescript/)
+[5](https://github.com/FabianGosebrink/ASPNET-Core-Angular2-StarterTemplate)
+[6](https://angular.io/docs/ts/latest/cookbook/visual-studio-2015.html)
 
 Core libraries
 ```
