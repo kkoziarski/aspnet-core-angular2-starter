@@ -16,6 +16,7 @@ Steps required after downloading this project
 * `> typings install`
 * `> dotnet restore`
 * `> dotnet build`
+* `> gulp rebuild`
 
 
 * __`> dotnet run`__
@@ -46,6 +47,7 @@ Steps required after downloading this project
     * `typescript.js`
     * `less.js`
     * `clean.js`
+    * `build.js`
 
 Sources:
 [1](https://github.com/antonybudianto/angular2-starter)
