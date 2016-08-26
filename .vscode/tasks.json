@@ -1,0 +1,74 @@
+{
+    "version": "0.1.0",
+    "command": "cmd",
+    "isShellCommand": true,
+    "args": ["/C"],
+    "showOutput": "always",
+    "suppressTaskName": true,
+    "options": {
+        "cwd": "${workspaceRoot}\\src\\aspnet-core-angular2-starter"
+    },
+    "tasks": [
+        {
+            "taskName": "build",
+            "isBuildCommand": true,
+            "args": ["dotnet build", ".\\project.json"],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "taskName": "start dotnet",
+            "isBuildCommand": true,
+            "args": ["dotnet run"],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "taskName": "restore",
+            "isBuildCommand": true,
+            "args": ["dotnet restore", ".\\project.json"],
+            "problemMatcher": "$msCompile"
+        },
+		{
+			"taskName": "ts (gulp)",
+			"isBuildCommand": true,
+            "args": ["gulp ts"],            
+			"showOutput": "always",
+			"problemMatcher": "$tsc"
+		},
+        {
+			"taskName": "less (gulp)",
+			"isBuildCommand": true,
+            "args": ["gulp less"],            
+			"showOutput": "always"
+		},
+        {
+			"taskName": "bld-build-app (gulp)",
+			"isBuildCommand": true,
+            "args": ["gulp build-app"],                        
+			"showOutput": "always"
+        },
+        {
+			"taskName": "rbd-rebuild (gulp)",
+			"isBuildCommand": true,
+            "args": ["gulp rebuild"],                        
+			"showOutput": "always"
+		},
+		{
+			"taskName": "watch",
+			"isBuildCommand": true,
+            "args": ["gulp watch"],                        
+			"showOutput": "always"
+		},
+		{
+			"taskName": "cl-clean (gulp)",
+			"isBuildCommand": true,
+            "args": ["gulp clean"],                        
+			"showOutput": "always"
+		},
+		{
+			"taskName": "cla-clean-all (gulp)",
+			"isBuildCommand": true,
+            "args": ["gulp clean-all"],                        
+			"showOutput": "always"
+		}
+    ]
+}

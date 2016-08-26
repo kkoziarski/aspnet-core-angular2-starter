@@ -48,6 +48,18 @@ Steps required after downloading this project
     * `less.js`
     * `clean.js`
     * `build.js`
+* `.vscode\tasks.json` - configure tasks for VSCode
+    * you can use VSCode Ctrl+P> task `[task name]`
+        * `task build`
+        * `task start dotnet`
+        * `task restore`
+        * `task ts (gulp)`
+        * `task less (gulp)`
+        * `bld-build-app (gulp)`
+        * `rbd-rebuild (gulp)`
+        * `task watch`
+        * `task cl-clean-app`
+        * `task cla-clean-all`
 
 Sources:
 [1](https://github.com/antonybudianto/angular2-starter)
