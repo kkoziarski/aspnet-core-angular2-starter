@@ -12,6 +12,7 @@
 * `> dotnet build`
 * `> dotnet run`
 * Create `index.html` file in wwwroot folder
+* Setup hosting port and urls in `Program.cs`
 
 Sources:
 [1](https://github.com/antonybudianto/angular2-starter)
