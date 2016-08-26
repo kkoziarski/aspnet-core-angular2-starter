@@ -5,7 +5,12 @@
 * (optional) `> yo aspnet` --> "WebApiApp" -> some-application-name
 
 ## Required steps
-
+* **Static files**
+    * `project.json` --> add `"Microsoft.AspNetCore.StaticFiles": "1.0.0"` in `dependencies` section
+    * `Startup.cs` add `app.UseStaticFiles()`
+* `> dotnet restore`
+* `> dotnet build`
+* `> dotnet run`
 
 Sources:
 [1](https://github.com/antonybudianto/angular2-starter)
