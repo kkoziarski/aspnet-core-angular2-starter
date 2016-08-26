@@ -40,6 +40,7 @@ Steps required after downloading this project
 * `> npm install`
 * `typings.json' - create identifies TypeScript definition files. See [TypeScript Configuration](https://angular.io/docs/ts/latest/guide/typescript-configuration.html#!#typings) for details
 * `> typings install`
+* `tsconfig.json` - create the TypeScript compiler configuration file. See [TypeScript Configuration](https://angular.io/docs/ts/latest/guide/typescript-configuration.html#tsconfig) for details.
 
 Sources:
 [1](https://github.com/antonybudianto/angular2-starter)
