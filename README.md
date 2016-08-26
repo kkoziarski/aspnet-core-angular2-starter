@@ -8,6 +8,7 @@
 * `> npm install -g typings`
 * `> npm install -g yo`
 * `> npm install -g grunt-cli`
+* __...OR SHORT: `> npm install -g npm bower gulp typescript typings grunt-cli yo`__
 
 # Build steps
 Steps required after downloading this project
