@@ -4,7 +4,9 @@ var clean = require('gulp-clean');
 var gulpprint = require('gulp-print');
 var util = require('gulp-util');
 
-gulp.task('clean-all', ["clean-libs"], function() {
+gulp.task('clean', ["clean-ts-app"]);
+
+gulp.task('clean-all', ["clean", "clean-libs"], function() {
     var files = [
         config.dest.webroot + 'favicon.ico'
     ];
@@ -12,6 +14,15 @@ gulp.task('clean-all', ["clean-libs"], function() {
         .pipe(clean())
         .pipe(gulpprint(function (filepath) {
             return util.colors.green("Removing file in webroot: " + filepath);
+        }));
+});
+
+// Delete the app directory
+gulp.task('clean-ts-app', function() {
+    return gulp.src(config.dest.app)
+        .pipe(clean())
+        .pipe(gulpprint(function (filepath) {
+            return util.colors.green("Cleanup app: " + filepath);
         }));
 });
 

@@ -43,6 +43,7 @@ Steps required after downloading this project
 * `tsconfig.json` - create the TypeScript compiler configuration file. See [TypeScript Configuration](https://angular.io/docs/ts/latest/guide/typescript-configuration.html#tsconfig) for details.
 * `gulpfile.js`, `config\gulp\config.js` and `config\gulp\tasks\...` (based on [Angular2 Starter](https://github.com/antonybudianto/angular2-starter))
     * `libs.js`
+    * `typescript.js`
     * `clean.js`
 
 Sources:
