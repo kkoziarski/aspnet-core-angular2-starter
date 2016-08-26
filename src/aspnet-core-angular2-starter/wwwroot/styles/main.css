@@ -1,0 +1,12 @@
+div.color div.orange {
+  background-color: #ff7f32;
+  border: 1px solid blue;
+}
+div.color div.green {
+  background-color: #33cc33;
+}
+div.color strong {
+  background-color: brown;
+}
+
+/*# sourceMappingURL=main.css.map */
