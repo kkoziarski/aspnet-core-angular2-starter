@@ -11,6 +11,7 @@
 * `> dotnet restore`
 * `> dotnet build`
 * `> dotnet run`
+* Create `index.html` file in wwwroot folder
 
 Sources:
 [1](https://github.com/antonybudianto/angular2-starter)
