@@ -1,7 +1,20 @@
 # How to steps 
 
-## Preconditions
+
+## Prerequisite
+* Install `Node.js` and `npm` 
+    * Verify that you are running at least node **v4.x.x** and npm **3.x.x** by running `node -v` and `npm -v`
+* `> npm install -g npm`
+* `> npm install -g bower`
+* `> npm install -g gulp`
+* `> npm install -g typescript`
+* `> npm install -g typings`
+* `> npm install -g yo`
+* `> npm install -g grunt-cli`
+
+## Preconditions (optional)
 * (optional) `> npm install -g generator-aspnet`
+* (optional) `> npm install -g code-generator`
 * (optional) `> yo aspnet` --> "WebApiApp" -> some-application-name
 
 ## Required steps
@@ -13,6 +26,8 @@
 * `> dotnet run`
 * Create `index.html` file in wwwroot folder
 * Setup hosting port and urls in `Program.cs`
+* Create `package.json` and add packages.  List of packages needed can be found on [5 min quickstart of Angular2](https://angular.io/docs/ts/latest/quickstart.html) website
+* `> npm install`
 
 Sources:
 [1](https://github.com/antonybudianto/angular2-starter)
