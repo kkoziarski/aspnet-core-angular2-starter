@@ -8,7 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
-namespace aspnet_core_angular2_starter
+namespace AspNetCoreAngular2Starter
 {
     public class Startup
     {

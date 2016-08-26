@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Builder;
 
-namespace aspnet_core_angular2_starter
+namespace AspNetCoreAngular2Starter
 {
     public class Program
     {
