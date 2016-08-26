@@ -1,7 +1,4 @@
-# How to steps 
-
-
-## Prerequisite
+# Prerequisite
 * Install `Node.js` and `npm` 
     * Verify that you are running at least node **v4.x.x** and npm **3.x.x** by running `node -v` and `npm -v`
 * `> npm install -g npm`
@@ -12,10 +9,23 @@
 * `> npm install -g yo`
 * `> npm install -g grunt-cli`
 
+# Build steps
+Steps required after downloading this project
+* `cd .\src\aspnet-core-angular2-starter`
+* `> npm install`
+* `> typings install`
+* `> dotnet restore`
+* `> dotnet build`
+
+
+* __`> dotnet run`__
+
 ## Preconditions (optional)
 * (optional) `> npm install -g generator-aspnet`
 * (optional) `> npm install -g code-generator`
 * (optional) `> yo aspnet` --> "WebApiApp" -> some-application-name
+
+# Implementation steps 
 
 ## Required steps
 * **Static files**
@@ -28,6 +38,8 @@
 * Setup hosting port and urls in `Program.cs`
 * Create `package.json` and add packages.  List of packages needed can be found on [5 min quickstart of Angular2](https://angular.io/docs/ts/latest/quickstart.html) website
 * `> npm install`
+* `typings.json' - create identifies TypeScript definition files. See [TypeScript Configuration](https://angular.io/docs/ts/latest/guide/typescript-configuration.html#!#typings) for details
+* `> typings install`
 
 Sources:
 [1](https://github.com/antonybudianto/angular2-starter)
