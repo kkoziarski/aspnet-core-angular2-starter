@@ -1,4 +1,5 @@
 typings/
 node_modules/
+bower_components/
 wwwroot/libs/
 wwwroot/fonts/font-awesome/

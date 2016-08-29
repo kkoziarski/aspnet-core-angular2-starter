@@ -1,0 +1,27 @@
+{
+  "name": "aspnet-core-angular2-starter",
+  "description": "ASP.NET Core with Angular2 starter",
+  "main": "/",
+  "authors": [
+    "Krzysztof Koziarski"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "aspnetcore",
+    "angular2",
+    "template"
+  ],
+  "homepage": "https://github.com/krzyhook/aspnet-core-angular2-starter",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.0",
+    "bootstrap": "^3.3.7",
+    "font-awesome": "^4.6.3"
+  }
+}

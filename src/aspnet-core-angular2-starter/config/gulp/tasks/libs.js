@@ -11,20 +11,8 @@ gulp.task("copy-libs", [
     , 'copy-libs:rxjs'
     , 'copy-libs:zone-js'
     , 'copy-libs:reflect-metadata'
-    , 'copy-libs:bootstrap'
-    , 'copy-libs:font-awesome'
+    , 'copy-libs:bower-components'
 ]);
-
-/* Copy fonts in packages */
-gulp.task("copy-libs:font-awesome", function () {
-    var fonts = [
-            config.src.npmLibs + '/font-awesome/fonts/*.*',
-            config.src.npmLibs + '/font-awesome/css/*.*'
-        ];
-
-    return gulp.src(fonts, { base: config.src.npmLibs + '/font-awesome/' })
-         .pipe(gulp.dest(config.dest.assets.fonts + '/font-awesome/'));
-});
 
 gulp.task("copy-libs:systemjs", function () {
     return gulp.src(config.src.npmLibs + '/systemjs/dist/**/*.*', { base: config.src.npmLibs + '/systemjs/dist/' })
@@ -66,12 +54,12 @@ gulp.task("copy-libs:reflect-metadata", function () {
          .pipe(gulp.dest(config.dest.npmLibs + '/reflect-metadata/'));
 });
 
-gulp.task("copy-libs:bootstrap", function () {
-    return gulp.src(config.src.npmLibs + '/bootstrap/dist/**/*', { base: config.src.npmLibs + '/bootstrap/dist/' })
-         .pipe(gulp.dest(config.dest.npmLibs + '/bootstrap/'));
-});
-
 gulp.task("copy-libs:@angular", function () {
     return gulp.src(config.src.npmLibs + '/@angular/**/*', { base: config.src.npmLibs + '/@angular/' })
          .pipe(gulp.dest(config.dest.npmLibs + '/@angular/'));
+});
+
+gulp.task("copy-libs:bower-components", function () {
+    return gulp.src('bower_components' + '/**/*', { base: 'bower_components' + '/' })
+         .pipe(gulp.dest(config.dest.npmLibs));
 });

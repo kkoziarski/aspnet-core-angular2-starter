@@ -43,6 +43,7 @@ Steps required after downloading this project
 * `typings.json' - create identifies TypeScript definition files. See [TypeScript Configuration](https://angular.io/docs/ts/latest/guide/typescript-configuration.html#!#typings) for details
 * `> typings install`
 * `tsconfig.json` - create the TypeScript compiler configuration file. See [TypeScript Configuration](https://angular.io/docs/ts/latest/guide/typescript-configuration.html#tsconfig) for details.
+* install `bower` packages
 * `gulpfile.js`, `config\gulp\config.js` and `config\gulp\tasks\...` (based on [Angular2 Starter](https://github.com/antonybudianto/angular2-starter))
     * `libs.js`
     * `typescript.js`
@@ -61,14 +62,16 @@ Steps required after downloading this project
         * `task watch`
         * `task cl-clean-app`
         * `task cla-clean-all`
+* `systemjs.config.js` - create the SystemJS configuration file
 
 Sources:
 [1](https://github.com/antonybudianto/angular2-starter)
 [2](https://angular.io/docs/ts/latest/quickstart.html)
 [3](http://asp.net-hacker.rocks/2016/04/04/aspnetcore-and-angular2-part1.html)
-[4](http://www.mithunvp.com/angular-2-asp-net-core-visual-studio-code-typescript/)
-[5](https://github.com/FabianGosebrink/ASPNET-Core-Angular2-StarterTemplate)
-[6](https://angular.io/docs/ts/latest/cookbook/visual-studio-2015.html)
+[4](http://asp.net-hacker.rocks/2016/08/08/setup-angular2-typescript-aspnetcore-in-visualstudio.html)
+[5](http://www.mithunvp.com/angular-2-asp-net-core-visual-studio-code-typescript/)
+[6](https://github.com/FabianGosebrink/ASPNET-Core-Angular2-StarterTemplate)
+[7](https://angular.io/docs/ts/latest/cookbook/visual-studio-2015.html)
 
 Core libraries
 ```
