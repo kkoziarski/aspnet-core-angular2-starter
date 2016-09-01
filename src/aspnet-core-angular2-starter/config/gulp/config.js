@@ -30,6 +30,9 @@ module.exports = function () {
         ],
         tsFiles = [
             appSrc + '**/!(*.spec)+(.ts)'
+        ],
+        assetFiles = [
+            appSrc + '**/*.html'
         ]
         src = {
             root: root,
@@ -37,7 +40,8 @@ module.exports = function () {
             npmLibs: npmSrc,
             tsFiles: tsFiles,
             lessFiles: lessFiles,
-            cssFiles: cssFiles
+            cssFiles: cssFiles,
+            assetFiles: assetFiles
         }
         dest = {
             root: root,

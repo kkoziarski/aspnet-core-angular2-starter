@@ -2,5 +2,7 @@ typings/
 node_modules/
 bower_components/
 wwwroot/libs/
+wwwroot/app/
 wwwroot/**/*.js
 wwwroot/**/*.map
+wwwroot/**/*.css
