@@ -21,6 +21,8 @@ Steps required after downloading this project
 
 
 * __`> dotnet run`__
+* __`> gulp watch`__
+
 
 ## Preconditions (optional)
 * (optional) `> npm install -g generator-aspnet`
@@ -63,6 +65,11 @@ Steps required after downloading this project
         * `task cl-clean-app`
         * `task cla-clean-all`
 * `systemjs.config.js` - create the SystemJS configuration file
+* add angular start TypeScript files `app\app.component` `app\app.module.ts` `app\main.ts`
+* add `systemjs.config.js` and angular JS files to `index.html`
+* ---------- Angular2 simplest example is working here
+
+
 
 Sources:
 [1](https://github.com/antonybudianto/angular2-starter)

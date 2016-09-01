@@ -14,18 +14,15 @@ gulp.task('build-assets', function () {
     // copy config.src.app + '**/*.html' --> dest(config.dest.app)
     // copy config.src.root + 'styles/**/*.css' --> dest(config.dest.assets.styles)
     // copy config.src.root + 'images/**/*.* --> dest(config.dest.app.assets.images)
+    //     runSequence('clean', ['less'/*, 'fonts'*/], function () {
+        
+    // gulp.src(config.src.root + 'favicon.ico')
+    //    .pipe(gulp.dest(config.dest.webroot))
+    //    .on('finish', done);
+    // });
 
     gulp.src(config.src.root + 'favicon.ico')
         .pipe(gulp.dest(config.dest.webroot));
 });
 
 gulp.task('watch', ['watch.ts', 'watch.less']);
-
-// gulp.task('build-assets', function (done) {
-//     runSequence('clean', ['less'/*, 'fonts'*/], function () {
-    
-//         gulp.src(config.src.root + 'favicon.ico')
-//             .pipe(gulp.dest(config.dest.webroot))
-//             .on('finish', done);
-//     });
-// });
