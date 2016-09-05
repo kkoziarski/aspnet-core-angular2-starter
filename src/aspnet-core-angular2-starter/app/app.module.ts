@@ -1,11 +1,34 @@
-import { NgModule }       from '@angular/core';
-import { BrowserModule  } from '@angular/platform-browser';
+import './rxjs-extensions';
 
-import { AppComponent }   from './app.component';
+import { NgModule }         from '@angular/core';
+import { BrowserModule  }   from '@angular/platform-browser';
+
+import { FormsModule }      from '@angular/forms';
+import { HttpModule }       from '@angular/http';
+
+import { AppComponent }     from './app.component';
+import { HomeComponent }    from './home/home.component';
+import { AboutComponent }   from './about/about.component';
+import { DataService }      from './services/dataService'
+
+import { routing }          from './app.routing';
 
 @NgModule({
-    declarations: [AppComponent],
-    imports:      [BrowserModule],
-    bootstrap:    [AppComponent],
+    imports:      [
+        BrowserModule,
+        FormsModule,
+        HttpModule,
+        routing
+    ],
+    declarations: [
+        AppComponent,
+        HomeComponent,
+        AboutComponent
+    ],
+    providers: [
+        DataService,
+    ],
+    bootstrap:    [ AppComponent ],
 })
-export class AppModule {}
+export class AppModule {
+}
