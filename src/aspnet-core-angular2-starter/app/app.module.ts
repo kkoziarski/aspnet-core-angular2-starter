@@ -10,6 +10,7 @@ import { AppComponent }     from './app.component';
 import { HomeComponent }    from './home/home.component';
 import { AboutComponent }   from './about/about.component';
 import { DataService }      from './services/dataService'
+import { Configuration } from './app.constants';
 
 import { routing }          from './app.routing';
 
@@ -27,6 +28,7 @@ import { routing }          from './app.routing';
     ],
     providers: [
         DataService,
+        Configuration
     ],
     bootstrap:    [ AppComponent ],
 })

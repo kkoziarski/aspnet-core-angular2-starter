@@ -16,19 +16,19 @@ export class HomeComponent implements OnInit {
     public values: any[];
 
     constructor(
-        private router: Router
-        //private _dataService: DataService
+        private router: Router,
+        private _dataService: DataService
         ) {
 
         this.values = [];
-        this.message = "Hello from HomeComponent constructor";
+        this.message = "Hello from HomeComponent ctor";
     }
 
     ngOnInit() {
-        // this._dataService
-        // .GetAll()
-        // .subscribe(data => this.values = data,
-        //         error => console.log(error),
-        //         () => console.log('Get all complete'));
+        this._dataService
+        .GetAll()
+        .subscribe(data => this.values = data,
+                error => console.log(error),
+                () => console.log('Get all complete'));
     }
 }

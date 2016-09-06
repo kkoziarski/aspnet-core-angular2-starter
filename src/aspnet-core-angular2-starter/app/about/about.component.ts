@@ -11,7 +11,7 @@ export class AboutComponent implements OnInit {
     public message: string;
 
     constructor(private router: Router) {
-        this.message = "Hello from About";
+        this.message = "Hello from AboutComponent ctor";
     }
 
     ngOnInit() {
