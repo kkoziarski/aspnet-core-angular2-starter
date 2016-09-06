@@ -7,4 +7,10 @@ import { Component }          from '@angular/core';
 })
 export class AppComponent {
     title = 'Hello from AppComponent';
+    copyYear : number;
+    
+    constructor(){
+        let today = new Date();
+        this.copyYear = today.getFullYear();
+    }
 }
