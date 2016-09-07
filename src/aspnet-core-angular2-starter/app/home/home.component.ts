@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router }            from '@angular/router';
 
 @Component({
-    selector: 'my-home',
+    selector: 'ancng-home',
     templateUrl: 'app/home/home.component.html'
 })
 

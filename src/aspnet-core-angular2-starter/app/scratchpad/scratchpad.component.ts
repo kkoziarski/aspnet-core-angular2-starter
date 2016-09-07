@@ -3,7 +3,7 @@ import { Router }            from '@angular/router';
 import { DataService } from '../services/dataService';
 
 @Component({
-    selector: 'my-scratchpad',
+    selector: 'ancng-scratchpad',
     templateUrl: 'app/scratchpad/scratchpad.component.html',
     providers: [
         DataService

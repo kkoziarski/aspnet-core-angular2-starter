@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router }            from '@angular/router';
 
 @Component({
-    selector: 'my-about',
+    selector: 'ancng-about',
     templateUrl: 'app/about/about.component.html'
 })
 
