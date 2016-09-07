@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent }        from './home/home.component';
 import { AboutComponent }       from './about/about.component';
+import { ScratchpadComponent }  from './scratchpad/scratchpad.component';
 
 const appRoutes: Routes = [
   { 
@@ -12,6 +13,10 @@ const appRoutes: Routes = [
   { 
     path: 'about', 
     component: AboutComponent
+  },
+  { 
+    path: 'scratchpad', 
+    component: ScratchpadComponent
   }
 ];
 
