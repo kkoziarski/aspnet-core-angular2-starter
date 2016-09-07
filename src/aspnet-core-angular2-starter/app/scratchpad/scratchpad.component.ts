@@ -25,7 +25,7 @@ export class ScratchpadComponent implements OnInit {
         this.message = "Hello from ScratchpadComponent ctor";
     }
 
-    ngOnInit() {
+    ngOnInit(): void {
         this._dataService
         .GetAll()
         .subscribe(data => this.values = data,

@@ -17,6 +17,6 @@ export class HomeComponent implements OnInit {
         this.message = "Hello from HomeComponent ctor";
     }
 
-    ngOnInit() {
+    ngOnInit(): void {
     }
 }
