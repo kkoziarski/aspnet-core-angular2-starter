@@ -5,6 +5,7 @@ import { DataService } from '../services/dataService';
 @Component({
     selector: 'ancng-scratchpad',
     templateUrl: 'app/scratchpad/scratchpad.component.html',
+    styleUrls:  ['app/scratchpad/scratchpad.component.css'],
     providers: [
         DataService
     ]
