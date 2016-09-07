@@ -41,13 +41,13 @@
 			"showOutput": "always"
 		},
         {
-			"taskName": "bld-build-app (gulp)",
+			"taskName": "build-app (gulp)",
 			"isBuildCommand": true,
             "args": ["gulp build-app"],                        
 			"showOutput": "always"
         },
         {
-			"taskName": "rbd-rebuild (gulp)",
+			"taskName": "rebuild (gulp)",
 			"isBuildCommand": true,
             "args": ["gulp rebuild"],                        
 			"showOutput": "always"
@@ -59,13 +59,13 @@
 			"showOutput": "always"
 		},
 		{
-			"taskName": "cl-clean (gulp)",
+			"taskName": "clean (gulp)",
 			"isBuildCommand": true,
             "args": ["gulp clean"],                        
 			"showOutput": "always"
 		},
 		{
-			"taskName": "cla-clean-all (gulp)",
+			"taskName": "clean-all (gulp)",
 			"isBuildCommand": true,
             "args": ["gulp clean-all"],                        
 			"showOutput": "always"

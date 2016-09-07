@@ -59,11 +59,11 @@ Steps required after downloading this project
         * `task restore`
         * `task ts (gulp)`
         * `task less (gulp)`
-        * `bld-build-app (gulp)`
-        * `rbd-rebuild (gulp)`
+        * `build-app (gulp)`
+        * `rebuild (gulp)`
         * `task watch`
-        * `task cl-clean-app`
-        * `task cla-clean-all`
+        * `task clean-app`
+        * `task clean-all`
 * `systemjs.config.js` - create the SystemJS configuration file
 * add angular start TypeScript files `app\app.component` `app\app.module.ts` `app\main.ts`
 * add `systemjs.config.js` and angular JS files to `index.html`

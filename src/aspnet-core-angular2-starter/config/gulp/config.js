@@ -32,7 +32,8 @@ module.exports = function () {
             appSrc + '**/!(*.spec)+(.ts)'
         ],
         assetFiles = [
-            appSrc + '**/*.html'
+            appSrc + '**/*.html',
+            appSrc + '**/*.css'
         ]
         src = {
             root: root,
