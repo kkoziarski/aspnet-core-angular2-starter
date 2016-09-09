@@ -9,30 +9,6 @@
         "cwd": "${workspaceRoot}\\src\\aspnet-core-angular2-starter"
     },
     "tasks": [
-        {
-            "taskName": "build",
-            "isBuildCommand": true,
-            "args": ["dotnet build", ".\\project.json"],
-            "problemMatcher": "$msCompile"
-        },
-        {
-            "taskName": "start dotnet",
-            "isBuildCommand": true,
-            "args": ["dotnet run"],
-            "problemMatcher": "$msCompile"
-        },
-        {
-            "taskName": "start dotnet watcher",
-            "isBuildCommand": true,
-            "args": ["dotnet watch run"],
-            "problemMatcher": "$msCompile"
-        },
-        {
-            "taskName": "restore",
-            "isBuildCommand": true,
-            "args": ["dotnet restore", ".\\project.json"],
-            "problemMatcher": "$msCompile"
-        },
 		{
 			"taskName": "ts (gulp)",
 			"isBuildCommand": true,
@@ -75,6 +51,30 @@
 			"isBuildCommand": true,
             "args": ["gulp clean-all"],                        
 			"showOutput": "always"
-		}
+		},
+        {
+            "taskName": "build",
+            "isBuildCommand": true,
+            "args": ["dotnet build", ".\\project.json"],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "taskName": "start dotnet",
+            "isBuildCommand": true,
+            "args": ["dotnet run"],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "taskName": "start dotnet watcher",
+            "isBuildCommand": true,
+            "args": ["dotnet watch run"],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "taskName": "restore",
+            "isBuildCommand": true,
+            "args": ["dotnet restore", ".\\project.json"],
+            "problemMatcher": "$msCompile"
+        }
     ]
 }
