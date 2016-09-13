@@ -9,16 +9,19 @@ import { Hero } from './hero';
 @Component({
   selector: 'hero-search',
   templateUrl: 'app/heroes/hero-search.component.html',
-  styleUrls:  ['app/heroes/hero-search.component.css'],
+  styleUrls: ['app/heroes/hero-search.component.css'],
   providers: [HeroSearchService]
 })
 export class HeroSearchComponent implements OnInit {
   heroes: Observable<Hero[]>;
+  isEmptyHeroes = true;//Observable<boolean>;
   private searchTerms = new Subject<string>();
 
   constructor(
     private heroSearchService: HeroSearchService,
-    private router: Router) {}
+    private router: Router) {
+    this.isEmptyHeroes = true;//Observable.of<boolean>(true);
+  }
 
   // Push a search term into the observable stream.
   search(term: string): void {
@@ -29,14 +32,21 @@ export class HeroSearchComponent implements OnInit {
     this.heroes = this.searchTerms
       .debounceTime(300)        // wait for 300ms pause in events
       .distinctUntilChanged()   // ignore if next search term is same as previous
-      .switchMap(term => term   // switch to new observable each time
-        // return the http search observable
-        ? this.heroSearchService.search(term)
-        // or the observable of empty heroes if no search term
-        : Observable.of<Hero[]>([]))
+      .switchMap(term => {   // switch to new observable each time
+        if (term) {
+          this.isEmptyHeroes = false;//Observable.of<boolean>(false);
+          // return the http search observable
+          return this.heroSearchService.search(term);
+        }
+        else {
+          this.isEmptyHeroes = true; Observable.of<boolean>(true);
+          // or the observable of empty heroes if no search term
+          return Observable.of<Hero[]>([]);
+        }
+      })
       .catch(error => {
+        this.isEmptyHeroes = true;//Observable.of<boolean>(true);
         // TODO: real error handling
-        console.log(error);
         return Observable.of<Hero[]>([]);
       });
   }

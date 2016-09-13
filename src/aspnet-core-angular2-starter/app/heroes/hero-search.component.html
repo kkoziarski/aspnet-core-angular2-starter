@@ -8,7 +8,7 @@
       {{hero.name}}
     </div>
   </div>-->
-    <ul class="dropdown-menu search-results" *ngIf="heroes">
+    <ul class="dropdown-menu search-results" [hidden]="!isEmptyHeroes">
       <li *ngFor="let hero of heroes | async">
         <a href="#" (click)="gotoDetail(hero)">{{hero.name}}</a>
       </li>
