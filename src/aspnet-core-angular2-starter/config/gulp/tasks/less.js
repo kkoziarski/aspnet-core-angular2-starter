@@ -12,13 +12,13 @@ var util = require('gulp-util');
 /* Compiles less, creates sourcemaps, creates .css */
 gulp.task('less:compile', ['clean-styles'], function () {
     util.log(util.colors.green('Running Less to CSS conversion (less->css)'));
-    return gulp.src(config.src.lessFiles, { base: "./" })
+    return gulp.src(config.src.lessFiles, { base: config.src.root })
         .pipe(plumber())
         .pipe(sourcemaps.init())
         .pipe(less())
 		.pipe(autoprefixer())
         .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest(config.dest.assetsRoot))
+        .pipe(gulp.dest(config.dest.root))
         .pipe(gulpprint(function (filepath) {
             return util.colors.green("Dest less->css: " + filepath);
         }));
@@ -26,8 +26,8 @@ gulp.task('less:compile', ['clean-styles'], function () {
 
 /* Compiles less, creates sourcemaps, creates .css and .min.css */
 gulp.task('less', ['clean-styles', 'less:compile'], function () {
-    util.log(util.colors.green('CSS minifying (css->min)'));    
-    return gulp.src(config.src.cssFiles, { base: "./" })
+    util.log(util.colors.green('CSS minifying (css->min)'));  
+    return gulp.src(config.dest.cssFiles, { base: "./" })
         .pipe(plumber())
         .pipe(cleanCss({ compatibility: 'ie8', sourceMap: true }))
         .pipe(rename({

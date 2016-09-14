@@ -1,65 +1,75 @@
 module.exports = function () {
     var //
-        root = '',
-        config = root + 'config/',
-        webroot = "wwwroot/",
-        appSrc = "app/",
-        appDst = "./wwwroot/app/",
+        config = './config/',
+        srcRoot = './Frontend/',
+        destRoot = "wwwroot/",
+        srcApp = srcRoot + "app/",
+        destApp = "./wwwroot/app/",
         npmSrc = "./node_modules/",
-        npmDstLibs = webroot + "libs/",
-        index = webroot + 'index.html',
-        assetsRoot = webroot + '',
-        assets = {
-            styles: assetsRoot + 'styles/',
-            images: assetsRoot + 'images/',
-            fonts: assetsRoot + 'fonts/'
-        },
-        // javaScriptFiles = [
-        //     './Scripts/*.js',
-        //     './Scripts/!(lib)/**/*.js',
-        //     '!./Scripts/_references.js',
-        //     '!./Scripts/restricted/**/*Spec.js'
-        // ],
-        lessFiles = [
-            'styles/**/*.less',
-            '!styles/bootstrap.variables.less'
+        npmDstLibs = destRoot + "libs/",
+        ignoreDestnpmLibs = '!' + npmDstLibs + '**',
+        srcAssetFiles = [
+            srcRoot + '**/*.html',
+            srcRoot + '**/*.css',
+            srcRoot + '**/*.{jpg,gif,png,svg,ico}',
         ],
-        cssFiles = [
-            assets.styles + '**/*.css',
-            '!' + assets.styles + '**/*.min.css'
+        destAssets = {
+            styles: [
+                destRoot + '**/*.css',
+                destRoot + '**/*.css.map',
+                ignoreDestnpmLibs
+            ],
+            images: [
+                destRoot + '**/*.{jpg,gif,png,svg,ico}',
+                ignoreDestnpmLibs
+            ],
+            templates: [
+                destRoot + '**/*.html',
+                ignoreDestnpmLibs
+            ],
+            fonts: destRoot + 'fonts/'
+        },
+        lessFiles = [
+            srcRoot + '**/*.less',
+            '!' + srcRoot + 'styles/bootstrap.variables.less'
+        ],
+        destCssFiles = [
+            destRoot + '**/*.css',
+            '!' + destRoot + '**/*.min.css',
+            ignoreDestnpmLibs
         ],
         tsFiles = [
-            appSrc + '**/!(*.spec)+(.ts)'
+            srcApp + '**/!(*.spec)+(.ts)'
         ],
-        assetFiles = [
-            appSrc + '**/*.html',
-            appSrc + '**/*.css'
-        ]
         src = {
-            root: root,
-            app: appSrc,
+            root: srcRoot,
+            app: srcApp,
             npmLibs: npmSrc,
             tsFiles: tsFiles,
             lessFiles: lessFiles,
-            cssFiles: cssFiles,
-            assetFiles: assetFiles
+            assetFiles: srcAssetFiles
         }
         dest = {
-            root: root,
-            webroot: webroot,
-            app: appDst,
+            root: destRoot,
+            app: destApp,
             npmLibs: npmDstLibs,
-            index: index,
-            assetsRoot: assetsRoot,
-            assets: assets
+            assets: destAssets,
+            cssFiles: destCssFiles,
+            ignoreDestnpmLibs: ignoreDestnpmLibs
         };
 
     var gulpConfig = {
-        root: root,
-        webroot: webroot,
+        root: srcRoot,
+        webroot: destRoot,
         src: src,
         dest: dest
     };
 
     return gulpConfig;
 };
+// javaScriptFiles = [
+//     './Scripts/*.js',
+//     './Scripts/!(lib)/**/*.js',
+//     '!./Scripts/_references.js',
+//     '!./Scripts/restricted/**/*Spec.js'
+// ],

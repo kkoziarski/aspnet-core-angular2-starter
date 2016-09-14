@@ -20,12 +20,12 @@ gulp.task('build-assets', function () {
     //     runSequence('clean', ['less'/*, 'fonts'*/], function () {
         
     // gulp.src(config.src.root + 'favicon.ico')
-    //    .pipe(gulp.dest(config.dest.webroot))
+    //    .pipe(gulp.dest(config.dest.root))
     //    .on('finish', done);
     // });
 
     gulp.src(config.src.root + 'favicon.ico')
-        .pipe(gulp.dest(config.dest.webroot));
+        .pipe(gulp.dest(config.dest.root));
     // gulp.src(config.src.app +  '**/*.html')
     //     .pipe(gulp.dest(config.dest.app));
     copyAssets(assetFiles);
