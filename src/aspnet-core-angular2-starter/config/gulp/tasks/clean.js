@@ -4,7 +4,7 @@ var clean = require('gulp-clean');
 var gulpprint = require('gulp-print');
 var util = require('gulp-util');
 
-gulp.task('clean', ["clean-ts-app", "clean-styles"]);
+gulp.task('clean', ["clean-ts", "clean-styles"]);
 
 gulp.task('clean-all', ["clean", "clean-libs"], function() {
     var files = [
@@ -18,7 +18,7 @@ gulp.task('clean-all', ["clean", "clean-libs"], function() {
 });
 
 // Delete the app directory
-gulp.task('clean-ts-app', function() {
+gulp.task('clean-ts', function() {
     return gulp.src(config.dest.app)
         .pipe(clean())
         .pipe(gulpprint(function (filepath) {

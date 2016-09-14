@@ -14,7 +14,7 @@ var typingFiles = [
 var tsFiles = config.src.tsFiles; //[].concat(config.tsFiles, tsUnitFiles, tsE2EFiles);
 
 // TypeScript compile
-gulp.task('ts', ['clean-ts-app'], function () {
+gulp.task('ts', ['clean-ts'], function () {
     return compileTs(tsFiles);
 });
 

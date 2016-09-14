@@ -54,12 +54,12 @@ Steps required after downloading this project
     * `build.js`
 * `.vscode\tasks.json` - configure tasks for VSCode
     * you can use VSCode Ctrl+P> task `[task name]`
-        * `task build`
+        * `task build dotnet`
         * `task start dotnet`
         * `task restore`
         * `task ts (gulp)`
         * `task less (gulp)`
-        * `build-app (gulp)`
+        * `build (gulp)`
         * `rebuild (gulp)`
         * `task watch`
         * `task clean-app`

@@ -9,7 +9,7 @@ gulp.task('rebuild', function (done) {
     runSequence('clean-all', 'copy-libs', 'ts', 'less', 'build-assets', done);
 });
 
-gulp.task('build-app', function (done) {
+gulp.task('build', function (done) {
     runSequence('clean', 'ts', 'less', 'build-assets', done);
 });
 
