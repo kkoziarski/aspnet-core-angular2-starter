@@ -5,10 +5,10 @@ var sourcemaps = require('gulp-sourcemaps');
 var gulpprint = require('gulp-print');
 var config = require('../config')();
 
-var tsProject = ts.createProject('tsconfig.json');
+var tsProject = ts.createProject('Frontend/tsconfig.json');
 // /* Initialize TS Project */
 var typingFiles = [
-    'typings/index.d.ts'
+    'Frontend/typings/index.d.ts'
     // config.src + 'manual_typings/**/*.d.ts'
 ];
 var tsFiles = config.src.tsFiles; //[].concat(config.tsFiles, tsUnitFiles, tsE2EFiles);

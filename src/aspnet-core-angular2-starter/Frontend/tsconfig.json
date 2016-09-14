@@ -8,11 +8,11 @@
         "experimentalDecorators": true,
         "removeComments": false,
         "noImplicitAny": false,
-        "outDir": "wwwroot/app/"
+        "outDir": "../wwwroot/app/"
     },
     "exclude": [
-        "node_modules",
-        "wwwroot/libs"
+        "../node_modules",
+        "../wwwroot/libs"
     ],
     "compileOnSave": false,
     "buildOnSave": false
