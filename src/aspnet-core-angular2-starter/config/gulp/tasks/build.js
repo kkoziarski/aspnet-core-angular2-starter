@@ -2,6 +2,7 @@ var gulp = require('gulp');
 var config = require('../config')();
 var runSequence = require('run-sequence');
 var util = require('gulp-util');
+var gulpprint = require('gulp-print');
 
 var assetFiles = config.src.assetFiles; //[].concat(config.tsFiles, tsUnitFiles, tsE2EFiles);
 
@@ -14,22 +15,19 @@ gulp.task('build', function (done) {
 });
 
 gulp.task('build-assets', function () {
-    // copy config.src.app + '**/*.html' --> dest(config.dest.app)
-    // copy config.src.root + 'styles/**/*.css' --> dest(config.dest.assets.styles)
-    // copy config.src.root + 'images/**/*.* --> dest(config.dest.app.assets.images)
-    //     runSequence('clean', ['less'/*, 'fonts'*/], function () {
-        
-    // gulp.src(config.src.root + 'favicon.ico')
-    //    .pipe(gulp.dest(config.dest.root))
-    //    .on('finish', done);
-    // });
+    var staticFiles = [
+        config.src.root + 'favicon.ico',
+        config.src.root + 'systemjs.config.js',
+        config.src.root + 'index.html'
+    ];
 
-    gulp.src(config.src.root + 'favicon.ico')
-        .pipe(gulp.dest(config.dest.root));
-    // gulp.src(config.src.app +  '**/*.html')
-    //     .pipe(gulp.dest(config.dest.app));
-    copyAssets(assetFiles);
-    
+    gulp.src(staticFiles, { base: config.src.root })
+        .pipe(gulp.dest(config.dest.root))
+        .pipe(gulpprint(function (filepath) {
+            return util.colors.green("Copying static file: " + filepath);
+        }));
+
+    copyAssets(assetFiles);    
 });
 
 /* Watch changed typescripts file and compile it */
