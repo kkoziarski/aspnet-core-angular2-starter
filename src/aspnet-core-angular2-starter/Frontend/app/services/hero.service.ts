@@ -14,7 +14,7 @@ import { Hero } from '../heroes/hero';
 export class HeroService {
 
   private headers = new Headers({'Content-Type': 'application/json'});
-  private heroesUrl = 'app/heroes';  // URL to web api
+  private heroesUrl = 'api/heroes';  // URL to web api
 
   constructor(private http: Http) { }
 

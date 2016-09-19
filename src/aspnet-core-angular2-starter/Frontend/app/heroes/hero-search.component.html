@@ -1,16 +1,10 @@
 <div id="search-component">
   <h4>Hero Search</h4>
   <div class="dropdown">
-    <input class="form-controlX" #searchBox id="search-box" (keyup)="search(searchBox.value)" />
-    <!--<div>
-    <div *ngFor="let hero of heroes | async"
-         (click)="gotoDetail(hero)" class="search-result" >
-      {{hero.name}}
-    </div>
-  </div>-->
+    <input #searchBox id="search-box" (keyup)="search(searchBox.value)" />
     <ul class="dropdown-menu search-results" [hidden]="!isEmptyHeroes">
       <li *ngFor="let hero of heroes | async">
-        <a href="#" (click)="gotoDetail(hero)">{{hero.name}}</a>
+        <a (click)="gotoDetail(hero)">{{hero.name}}</a>
       </li>
     </ul>
   </div>
