@@ -30,6 +30,28 @@ gulp.task('build-assets', function () {
     copyAssets(assetFiles);    
 });
 
+/* Compiles less, creates sourcemaps, creates .css and .min.css */
+gulp.task('css-min', ['less'], function () {
+    util.log(util.colors.green('CSS minifying (css->min)'));
+    // styles to minify as output from less
+    var destCssFilesToMinify = [
+        config.dest.root + '**/*.css',
+        '!' + config.dest.root + '**/*.min.css',
+        config.dest.ignoreDestNpmLibs
+    ];
+
+    return gulp.src(destCssFilesToMinify, { base: "./" })
+        .pipe(plumber())
+        .pipe(cleanCss({ compatibility: 'ie8', sourceMap: true }))
+        .pipe(rename({
+            suffix: '.min'
+        }))
+        .pipe(gulp.dest('.'))
+        .pipe(gulpprint(function (filepath) {
+            return util.colors.green("Dest css->min: " + filepath);
+        }));
+});
+
 /* Watch changed typescripts file and compile it */
 gulp.task('watch.assets', function () {
     return gulp.watch(assetFiles, function (file) {
