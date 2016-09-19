@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.IO;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -29,7 +25,15 @@ namespace AspNetCoreAngular2Starter
         public void ConfigureServices(IServiceCollection services)
         {
             // Add framework services.
-            services.AddMvc();
+            services.AddMvc()
+                .AddMvcOptions(options =>
+                {
+                    options.CacheProfiles.Add("NoCache", new Microsoft.AspNetCore.Mvc.CacheProfile
+                    {
+                        NoStore = true,
+                        Duration = 0
+                    });
+                });;
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -44,7 +48,9 @@ namespace AspNetCoreAngular2Starter
                 await next();
 
                 if (context.Response.StatusCode == 404
-                    && !Path.HasExtension(context.Request.Path.Value))
+                    && !Path.HasExtension(context.Request.Path.Value)
+                    && !context.Request.Path.Value.StartsWith("/api/")
+                    && !context.Request.Path.Value.StartsWith("/libs/"))
                 {
                     context.Request.Path = "/index.html";
                     await next();
