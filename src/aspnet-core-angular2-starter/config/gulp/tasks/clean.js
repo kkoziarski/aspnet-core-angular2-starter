@@ -1,23 +1,22 @@
 var gulp = require('gulp');
 var config = require('../config')();
 var clean = require('gulp-clean');
+var del = require('del');
 var gulpprint = require('gulp-print');
 var util = require('gulp-util');
 
-//gulp.task('clean', ["clean-ts", "clean-styles"]);
-
-//remove ./wwwroot
-gulp.task('clean', function() {
-    var srcFiles = [
-        config.dest.root + '**',
-        config.dest.ignoreDestnpmLibs
-    ];
-
-    return gulp.src(srcFiles)
-        .pipe(clean())
-        .pipe(gulpprint(function (filepath) {
-            return util.colors.green("Removing file in webroot: " + filepath);
-        }));
+//remove ./wwwroot content except /libs
+gulp.task('clean', function(cb) {
+    return del([
+        config.dest.root + '**/*',
+        '!' + config.dest.root + 'libs',
+        '!' + config.dest.npmLibs,
+        config.dest.ignoreDestNpmLibs
+    ], cb)
+    .then(paths => {
+        util.log(util.colors.green('Deleted files and folders in webroot'));
+        util.log(util.colors.magenta(paths.join('\n')));
+    });
 });
 
 //remove ./wwwroot
@@ -60,3 +59,8 @@ gulp.task('clean-libs', function() {
             return util.colors.green("Cleanup libs: " + filepath);
         }));
 });
+
+// Private functions 
+function log(message) {
+    return util.log(util.colors.green(message));
+}

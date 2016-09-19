@@ -9,6 +9,13 @@ var autoprefixer = require('gulp-autoprefixer');
 var gulpprint = require('gulp-print');
 var util = require('gulp-util');
 
+// styles to minify as output from less
+var destCssFilesToMinify = [
+    config.dest.root + '**/*.css',
+    '!' + config.dest.root + '**/*.min.css',
+    config.dest.ignoreDestNpmLibs
+];
+
 /* Compiles less, creates sourcemaps, creates .css */
 gulp.task('less:compile', ['clean-styles'], function () {
     util.log(util.colors.green('Running Less to CSS conversion (less->css)'));
@@ -26,8 +33,8 @@ gulp.task('less:compile', ['clean-styles'], function () {
 
 /* Compiles less, creates sourcemaps, creates .css and .min.css */
 gulp.task('less', ['clean-styles', 'less:compile'], function () {
-    util.log(util.colors.green('CSS minifying (css->min)'));  
-    return gulp.src(config.dest.cssFiles, { base: "./" })
+    util.log(util.colors.green('CSS minifying (css->min)'));
+    return gulp.src(destCssFilesToMinify, { base: "./" })
         .pipe(plumber())
         .pipe(cleanCss({ compatibility: 'ie8', sourceMap: true }))
         .pipe(rename({

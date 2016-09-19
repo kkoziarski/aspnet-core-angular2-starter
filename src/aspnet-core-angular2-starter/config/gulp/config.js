@@ -7,36 +7,31 @@ module.exports = function () {
         destApp = "./wwwroot/app/",
         npmSrc = "./node_modules/",
         npmDstLibs = destRoot + "libs/",
-        ignoreDestnpmLibs = '!' + npmDstLibs + '**',
+        ignoreDestNpmLibs = '!' + npmDstLibs + '**/*',
         srcAssetFiles = [
             srcRoot + '**/*.html',
             srcRoot + '**/*.css',
             srcRoot + '**/*.{jpg,gif,png,svg,ico}',
         ],
         destAssets = {
-            styles: [
+            styles: [ // styles to clean
                 destRoot + '**/*.css',
                 destRoot + '**/*.css.map',
-                ignoreDestnpmLibs
+                ignoreDestNpmLibs
             ],
             images: [
                 destRoot + '**/*.{jpg,gif,png,svg,ico}',
-                ignoreDestnpmLibs
+                ignoreDestNpmLibs
             ],
             templates: [
                 destRoot + '**/*.html',
-                ignoreDestnpmLibs
+                ignoreDestNpmLibs
             ],
             fonts: destRoot + 'fonts/'
         },
         lessFiles = [
             srcRoot + '**/*.less',
             '!' + srcRoot + 'styles/bootstrap.variables.less'
-        ],
-        destCssFiles = [
-            destRoot + '**/*.css',
-            '!' + destRoot + '**/*.min.css',
-            ignoreDestnpmLibs
         ],
         tsFiles = [
             srcApp + '**/!(*.spec)+(.ts)'
@@ -54,8 +49,7 @@ module.exports = function () {
             app: destApp,
             npmLibs: npmDstLibs,
             assets: destAssets,
-            cssFiles: destCssFiles,
-            ignoreDestnpmLibs: ignoreDestnpmLibs
+            ignoreDestNpmLibs: ignoreDestNpmLibs
         };
 
     var gulpConfig = {
