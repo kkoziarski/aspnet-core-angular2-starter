@@ -10,7 +10,6 @@ module.exports = function () {
         ignoreDestNpmLibs = '!' + npmDstLibs + '**/*',
         srcAssetFiles = [
             srcRoot + '**/*.html',
-            srcRoot + '**/*.css',
             srcRoot + '**/*.{jpg,gif,png,svg,ico}',
         ],
         destAssets = {
