@@ -4,7 +4,7 @@ Angular part is based on the official Angular's [Tour of Heroes](https://angular
 
 # Prerequisite
 * Install `Node.js` and `npm` 
-    * Verify that you are running at least node **v4.x.x** and npm **3.x.x** by running `node -v` and `npm -v`
+    * Verify that you are running at least node **v5.x.x** and npm **3.x.x** by running `node -v` and `npm -v`
 * `> npm install -g npm`
 * `> npm install -g bower`
 * `> npm install -g gulp`
