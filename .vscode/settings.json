@@ -1,0 +1,8 @@
+// Workspace settings
+{
+    // The following will hide the map files in the editor
+    "files.exclude": {
+        "**/*.map": true,
+        "src/aspnet-core-angular2-starter/bin/": true
+    }
+}
