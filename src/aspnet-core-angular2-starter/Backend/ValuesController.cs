@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
-namespace AspNetCoreAngular2Starter.Controllers
+namespace AspNetCoreAngular2Starter.Backend
 {
     [Route("api/[controller]")]
     public class ValuesController : Controller
