@@ -5,6 +5,12 @@ var sourcemaps = require('gulp-sourcemaps');
 var gulpprint = require('gulp-print');
 var config = require('../config')();
 
+/*
+gulp-typescript: ts(tsProject) has been deprecated - use .pipe(tsProject(reporter)) instead
+  As of gulp-typescript 3.0, .pipe(ts(tsProject)) should be written as .pipe(tsProject()).
+  More information: http://dev.ivogabe.com/gulp-typescript-3/
+*/
+
 var tsProject = ts.createProject('Frontend/tsconfig.json');
 // /* Initialize TS Project */
 var typingFiles = [
@@ -39,7 +45,8 @@ function compileTs(files, watchMode) {
         // }))
         // .pipe(tslint.report())
         .pipe(sourcemaps.init())
-        .pipe(ts(tsProject))
+        //.pipe(ts(tsProject))
+        .pipe(tsProject())
         .on('error', function () {
             if (watchMode) {
                 return;
