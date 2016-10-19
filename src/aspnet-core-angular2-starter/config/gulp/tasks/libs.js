@@ -4,7 +4,7 @@ var config = require('../config')();
 gulp.task("copy-libs", [
     'copy-libs:@angular'
     , 'copy-libs:systemjs'
-    , 'copy-libs:angular2-in-memory-web-api'
+    , 'copy-libs:angular-in-memory-web-api'
     , 'copy-libs:core-js'
     , 'copy-libs:es6-shim'
     , 'copy-libs:es6-promise'
@@ -34,9 +34,9 @@ gulp.task("copy-libs:core-js", function () {
          .pipe(gulp.dest(config.dest.npmLibs + '/core-js/'));
 });
 
-gulp.task("copy-libs:angular2-in-memory-web-api", function () {
-    return gulp.src(config.src.npmLibs + '/angular2-in-memory-web-api/*.js', { base: config.src.npmLibs + '/angular2-in-memory-web-api/' })
-         .pipe(gulp.dest(config.dest.npmLibs + '/angular2-in-memory-web-api/'));
+gulp.task("copy-libs:angular-in-memory-web-api", function () {
+    return gulp.src(config.src.npmLibs + '/angular-in-memory-web-api/*.js', { base: config.src.npmLibs + '/angular-in-memory-web-api/' })
+         .pipe(gulp.dest(config.dest.npmLibs + '/angular-in-memory-web-api/'));
 });
 
 gulp.task("copy-libs:rxjs", function () {
