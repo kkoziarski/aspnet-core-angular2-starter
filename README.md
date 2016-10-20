@@ -25,6 +25,7 @@ Steps required after downloading this project
 
 
 * __`> dotnet run`__
+* __`> dotnet watch run`__
 * __`> gulp watch`__
 
 [Implementation Steps](ImplementationSteps.md)
