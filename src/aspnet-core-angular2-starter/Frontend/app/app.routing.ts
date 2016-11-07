@@ -5,7 +5,7 @@ import { HomeComponent }        from './home/home.component';
 import { AboutComponent }       from './about/about.component';
 import { ScratchpadComponent }  from './scratchpad/scratchpad.component';
 
-import { HeroesComponent }      from './heroes/heroes.component';
+import { HeroesListComponent }      from './heroes/heroes-list.component';
 import { HeroDetailComponent }  from './heroes/hero-detail.component';
 import { HeroesDashboardComponent }      from './heroes/heroes-dashboard.component';
 
@@ -25,7 +25,7 @@ const appRoutes: Routes = [
   },
   { 
     path: 'heroes', 
-    component: HeroesComponent
+    component: HeroesListComponent
   },
   {
     path: 'heroes-dashboard',

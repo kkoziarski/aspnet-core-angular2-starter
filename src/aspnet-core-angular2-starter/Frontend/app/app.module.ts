@@ -13,7 +13,7 @@ import { HttpModule }       from '@angular/http';
 import { AppComponent }         from './app.component';
 import { HomeComponent }        from './home/home.component';
 import { AboutComponent }       from './about/about.component';
-import { HeroesComponent }      from './heroes/heroes.component';
+import { HeroesListComponent }      from './heroes/heroes-list.component';
 import { HeroesDashboardComponent }   from './heroes/heroes-dashboard.component';
 import { HeroDetailComponent }  from './heroes/hero-detail.component';
 import { HeroSearchComponent }  from './heroes/hero-search.component';
@@ -37,7 +37,7 @@ import { routing }              from './app.routing';
         AppComponent,
         HomeComponent,
         AboutComponent,
-        HeroesComponent,
+        HeroesListComponent,
         HeroDetailComponent,
         HeroesDashboardComponent,
         HeroSearchComponent,

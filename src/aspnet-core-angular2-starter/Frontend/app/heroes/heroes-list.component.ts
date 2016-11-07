@@ -6,10 +6,10 @@ import { HeroService }         from '../services/hero.service';
 
 @Component({
   selector: 'my-heroes',
-  templateUrl: 'app/heroes/heroes.component.html',
-  styleUrls:  ['app/heroes/heroes.component.css']
+  templateUrl: 'app/heroes/heroes-list.component.html',
+  styleUrls:  ['app/heroes/heroes-list.component.css']
 })
-export class HeroesComponent implements OnInit {
+export class HeroesListComponent implements OnInit {
   heroes: Hero[];
   selectedHero: Hero;
 
@@ -51,6 +51,6 @@ export class HeroesComponent implements OnInit {
   }
 
   gotoDetail(): void {
-    this.router.navigate(['/hero-detail', this.selectedHero.id]);
+    this.router.navigate(['/heroes/', this.selectedHero.id]);
   }
 }
