@@ -14,7 +14,7 @@ gulp-typescript: ts(tsProject) has been deprecated - use .pipe(tsProject(reporte
 var tsProject = ts.createProject('Frontend/tsconfig.json');
 // /* Initialize TS Project */
 var typingFiles = [
-    'Frontend/typings/index.d.ts'
+    // 'Frontend/typings/index.d.ts'
     // config.src + 'manual_typings/**/*.d.ts'
 ];
 var tsFiles = config.src.tsFiles; //[].concat(config.tsFiles, tsUnitFiles, tsE2EFiles);
