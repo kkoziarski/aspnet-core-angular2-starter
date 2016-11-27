@@ -5,7 +5,7 @@ import { Hero }              from './hero';
 import { HeroService }         from '../services/hero.service';
 
 @Component({
-  selector: 'my-heroes',
+  selector: 'ancng-heroes',
   templateUrl: 'app/heroes/heroes-list.component.html',
   styleUrls:  ['app/heroes/heroes-list.component.css']
 })
@@ -51,6 +51,6 @@ export class HeroesListComponent implements OnInit {
   }
 
   gotoDetail(): void {
-    this.router.navigate(['/hero', this.selectedHero.id]);
+    this.router.navigate(['/heroes', this.selectedHero.id]);
   }
 }

@@ -6,6 +6,7 @@ import { RouterModule } from "@angular/router";
 import { HeroService } from '../services/hero.service';
 import { Configuration } from '../app.constants';
 
+import { HeroesComponent } from "./heroes.component";
 import { HeroesListComponent } from "./heroes-list.component";
 import { HeroDetailComponent } from './hero-detail.component';
 import { HeroesDashboardComponent } from './heroes-dashboard.component';
@@ -21,6 +22,7 @@ import { HeroesRoutingModule } from './heroes-routing.module';
     ],
     exports: [],
     declarations: [
+        HeroesComponent,
         HeroesListComponent,
         HeroDetailComponent, 
         HeroesDashboardComponent,
