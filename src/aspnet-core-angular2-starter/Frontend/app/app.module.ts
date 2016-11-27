@@ -13,34 +13,29 @@ import { HttpModule }       from '@angular/http';
 import { AppComponent }         from './app.component';
 import { HomeComponent }        from './home/home.component';
 import { AboutComponent }       from './about/about.component';
-import { HeroesListComponent }      from './heroes/heroes-list.component';
-import { HeroesDashboardComponent }   from './heroes/heroes-dashboard.component';
-import { HeroDetailComponent }  from './heroes/hero-detail.component';
-import { HeroSearchComponent }  from './heroes/hero-search.component';
+
+import { HeroesModule }         from './heroes/heroes.module';
+
 import { ScratchpadComponent }  from './scratchpad/scratchpad.component';
 import { DataService }          from './services/dataService'
 import { HeroService }          from './services/hero.service';
 import { Configuration }        from './app.constants';
 
 
-import { routing }              from './app.routing';
+import { AppRoutingModule }              from './app-routing.module';
 
 @NgModule({
     imports:      [
         BrowserModule,
         FormsModule,
         HttpModule,
-        // InMemoryWebApiModule.forRoot(InMemoryDataService),
-        routing
+        AppRoutingModule,
+        HeroesModule
     ],
     declarations: [
         AppComponent,
         HomeComponent,
         AboutComponent,
-        HeroesListComponent,
-        HeroDetailComponent,
-        HeroesDashboardComponent,
-        HeroSearchComponent,
         ScratchpadComponent
     ],
     providers: [

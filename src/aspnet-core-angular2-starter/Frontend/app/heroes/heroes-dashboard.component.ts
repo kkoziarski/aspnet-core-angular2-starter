@@ -23,7 +23,7 @@ export class HeroesDashboardComponent implements OnInit {
   }
 
   gotoDetail(hero: Hero): void {
-    let link = ['/hero-detail', hero.id];
+    let link = ['/hero', hero.id];
     this.router.navigate(link);
   }
 }
