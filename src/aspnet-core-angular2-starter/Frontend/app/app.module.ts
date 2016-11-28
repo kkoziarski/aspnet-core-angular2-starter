@@ -18,7 +18,6 @@ import { HeroesModule }         from './heroes/heroes.module';
 
 import { ScratchpadComponent }  from './scratchpad/scratchpad.component';
 import { DataService }          from './services/dataService'
-import { HeroService }          from './services/hero.service';
 import { Configuration }        from './app.constants';
 
 
@@ -40,7 +39,6 @@ import { AppRoutingModule }              from './app-routing.module';
     ],
     providers: [
         DataService,
-        HeroService,
         Configuration
     ],
     bootstrap:    [ AppComponent ],
