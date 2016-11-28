@@ -6,6 +6,8 @@ import { HeroesListComponent } from "./heroes-list.component";
 import { HeroDetailComponent } from './hero-detail.component';
 import { HeroesDashboardComponent } from './heroes-dashboard.component';
 
+import { HeroDetailResolve } from './hero-detail-resolve.service';
+
 const heroesRoutes: Routes = [
     {
         path: 'heroes',
@@ -21,7 +23,10 @@ const heroesRoutes: Routes = [
             },
             {
                 path: ':id',
-                component: HeroDetailComponent
+                component: HeroDetailComponent,
+                resolve: {
+                    hero: HeroDetailResolve
+                }
             }
         ]
     }
@@ -33,31 +38,9 @@ const heroesRoutes: Routes = [
     ],
     exports: [
         RouterModule
+    ],
+    providers: [
+        HeroDetailResolve
     ]
 })
 export class HeroesRoutingModule { }
-
-/*
-const crisisCenterRoutes: Routes = [
-  {
-    path: 'crisis-center',
-    component: CrisisCenterComponent,
-    children: [
-      {
-        path: '',
-        component: CrisisListComponent,
-        children: [
-          {
-            path: ':id',
-            component: CrisisDetailComponent
-          },
-          {
-            path: '',
-            component: CrisisCenterHomeComponent
-          }
-        ]
-      }
-    ]
-  }
-];
-*/
