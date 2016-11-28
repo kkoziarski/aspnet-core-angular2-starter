@@ -7,7 +7,7 @@ import { HeroSearchService } from '../services/hero-search.service';
 import { Hero } from './hero';
 
 @Component({
-  selector: 'ancng-hero-search',
+  selector: 'ngnco-hero-search',
   templateUrl: 'app/heroes/hero-search.component.html',
   styleUrls: ['app/heroes/hero-search.component.css'],
   providers: [HeroSearchService]

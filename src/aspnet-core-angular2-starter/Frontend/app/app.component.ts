@@ -1,7 +1,7 @@
 import { Component }          from '@angular/core';
 
 @Component({
-    selector: 'ancng-app',
+    selector: 'ngnco-app',
     templateUrl: 'app/app.component.html'
     //   styleUrls: ['app/app.component.css']
 })

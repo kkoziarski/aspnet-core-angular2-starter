@@ -5,7 +5,7 @@ import { Hero }        from './hero';
 import { HeroService } from '../services/hero.service';
 
 @Component({
-  selector: 'ancng-heroes-dashboard',
+  selector: 'ngnco-heroes-dashboard',
   templateUrl: 'app/heroes/heroes-dashboard.component.html',
   styleUrls: ['app/heroes/heroes-dashboard.component.css']
 })
