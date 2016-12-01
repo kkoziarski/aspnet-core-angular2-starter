@@ -17,7 +17,11 @@ const appRoutes: Routes = [
   { 
     path: 'scratchpad', 
     component: ScratchpadComponent
-  }
+  },
+  {
+    path: 'lazy-heroes',
+    loadChildren: 'app/lazy/lazy-heroes.module#LazyHeroesModule'
+  },
 ];
 
 @NgModule({

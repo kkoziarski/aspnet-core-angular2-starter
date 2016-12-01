@@ -15,7 +15,6 @@ import { HomeComponent }        from './home/home.component';
 import { AboutComponent }       from './about/about.component';
 
 import { HeroesModule }         from './heroes/heroes.module';
-import { LazyHeroesModule }         from './lazy/lazy-heroes.module';
 
 import { ScratchpadComponent }  from './scratchpad/scratchpad.component';
 import { DataService }          from './services/dataService'
@@ -30,8 +29,7 @@ import { AppRoutingModule }              from './app-routing.module';
         FormsModule,
         HttpModule,
         AppRoutingModule,
-        HeroesModule,
-        LazyHeroesModule
+        HeroesModule
     ],
     declarations: [
         AppComponent,

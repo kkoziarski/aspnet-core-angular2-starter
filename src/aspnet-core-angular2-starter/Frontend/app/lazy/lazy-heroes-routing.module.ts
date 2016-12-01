@@ -9,7 +9,7 @@ import { LazyHeroDetailResolve } from './lazy-hero-detail-resolve.service';
 
 const heroesRoutes: Routes = [
     {
-        path: 'lazy-heroes',
+        path: '',
         component: LazyHeroesComponent,
         children: [
             {
