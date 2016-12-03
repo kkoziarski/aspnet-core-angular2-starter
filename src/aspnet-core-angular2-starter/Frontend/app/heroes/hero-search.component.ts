@@ -34,21 +34,20 @@ export class HeroSearchComponent implements OnInit {
       .distinctUntilChanged()   // ignore if next search term is same as previous
       .switchMap(term => {   // switch to new observable each time
         if (term) {
-          this.isEmptyHeroes = false;//Observable.of<boolean>(false);
-          // return the http search observable
           return this.heroSearchService.search(term);
         }
         else {
-          this.isEmptyHeroes = true; Observable.of<boolean>(true);
-          // or the observable of empty heroes if no search term
           return Observable.of<Hero[]>([]);
         }
       })
       .catch(error => {
-        this.isEmptyHeroes = true;//Observable.of<boolean>(true);
         // TODO: real error handling
         return Observable.of<Hero[]>([]);
       });
+
+    this.heroes.subscribe((heroes: Hero[]) => {
+        this.isEmptyHeroes = heroes.length === 0;
+    });
   }
 
   gotoDetail(hero: Hero): void {
