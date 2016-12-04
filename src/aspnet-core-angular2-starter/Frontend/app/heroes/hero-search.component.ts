@@ -14,13 +14,13 @@ import { Hero } from './hero';
 })
 export class HeroSearchComponent implements OnInit {
   heroes: Observable<Hero[]>;
-  isEmptyHeroes = true;//Observable<boolean>;
+  isEmptyHeroes = true;
   private searchTerms = new Subject<string>();
 
   constructor(
     private heroSearchService: HeroSearchService,
     private router: Router) {
-    this.isEmptyHeroes = true;//Observable.of<boolean>(true);
+    this.isEmptyHeroes = true;
   }
 
   // Push a search term into the observable stream.
