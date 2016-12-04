@@ -16,7 +16,7 @@ gulp.task('ts', ['clean-ts'], function () {
 
 /* Watch changed typescripts file and compile it */
 gulp.task('watch.ts', function () {
-    return gulp.watch(tsFiles, function (file) {
+    return gulp.watch(tsFiles, { cwd: config.src.app }, function (file) {
         util.log('Compiling ' + file.path + '...');
         return compileTs(file.path, true);
     });
@@ -27,7 +27,7 @@ function compileTs(files, watchMode) {
 
     var allFiles = files; //[].concat(files, typingFiles);
     var res = gulp.src(allFiles, {
-            base: config.src.app,
+            cwd: config.src.app,
             outDir: config.dest.app
         })
         // .pipe(tslint({

@@ -54,7 +54,7 @@ gulp.task('css-min', ['less'], function () {
 
 /* Watch changed typescripts file and compile it */
 gulp.task('watch.assets', function () {
-    return gulp.watch(assetFiles, function (file) {
+    return gulp.watch(assetFiles, { cwd : config.src.root }, function (file) {
         util.log('Copying asset ' + file.path + '...');
         return copyAssets(file.path, true);
     });

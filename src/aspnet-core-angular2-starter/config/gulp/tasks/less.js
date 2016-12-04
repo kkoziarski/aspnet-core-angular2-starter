@@ -12,7 +12,7 @@ var util = require('gulp-util');
 /* Compiles less, creates sourcemaps, creates .css */
 gulp.task('less', function () {
     util.log(util.colors.green('Running Less to CSS conversion (less->css)'));
-    return gulp.src(config.src.lessFiles, { base: config.src.root })
+    return gulp.src(config.src.lessFiles, { cwd: config.src.root })
         .pipe(plumber())
         .pipe(sourcemaps.init())
         .pipe(less())
@@ -25,5 +25,5 @@ gulp.task('less', function () {
 });
 
 gulp.task('watch.less', function () {
-    gulp.watch(config.src.lessFiles, ['less']);
+    gulp.watch(config.src.lessFiles,  { cwd: config.src.root }, ['less']);
 });

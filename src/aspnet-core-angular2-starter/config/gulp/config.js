@@ -9,8 +9,8 @@ module.exports = function () {
         npmDstLibs = destRoot + "libs/",
         ignoreDestNpmLibs = '!' + npmDstLibs + '**/*',
         srcAssetFiles = [
-            srcRoot + '**/*.html',
-            srcRoot + '**/*.{jpg,gif,png,svg,ico}',
+            '**/*.html',
+            '**/*.{jpg,gif,png,svg,ico}',
         ],
         destAssets = {
             styles: [ // styles to clean
@@ -29,11 +29,11 @@ module.exports = function () {
             fonts: destRoot + 'fonts/'
         },
         lessFiles = [
-            srcRoot + '**/*.less',
+            '**/*.less',
             '!' + srcRoot + 'styles/bootstrap.variables.less'
         ],
         tsFiles = [
-            srcApp + '**/!(*.spec)+(.ts)'
+            '**/!(*.spec)+(.ts)'
         ],
         src = {
             root: srcRoot,
