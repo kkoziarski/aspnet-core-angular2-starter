@@ -4,9 +4,13 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Microsoft.EntityFrameworkCore;
+using AspNetCoreAngular2Starter.Backend.Data;
 
 namespace AspNetCoreAngular2Starter
 {
+    using AspNetCoreAngular2Starter.Backend.Models;
+
     public class Startup
     {
         public IConfigurationRoot Configuration { get; }
@@ -24,6 +28,9 @@ namespace AspNetCoreAngular2Starter
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<ApplicationDbContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
             // Add framework services.
             services.AddMvc()
                 .AddMvcOptions(options =>
@@ -33,11 +40,11 @@ namespace AspNetCoreAngular2Starter
                         NoStore = true,
                         Duration = 0
                     });
-                });;
+                });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory, ApplicationDbContext dbContext)
         {
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
@@ -55,12 +62,20 @@ namespace AspNetCoreAngular2Starter
                     context.Request.Path = "/index.html";
                     await next();
                 }
-            });    
+            });
 
             app.UseDefaultFiles();
-            app.UseStaticFiles();    
+            app.UseStaticFiles();
 
             app.UseMvc();
+            //app.UseMvc(routes =>
+            //{
+            //    routes.MapRoute(
+            //        name: "default",
+            //        template: "{controller=Home}/{action=Index}/{id?}");
+            //});
+
+            DbInitializer.Initialize(dbContext);
         }
     }
 }

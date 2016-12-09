@@ -1,4 +1,4 @@
-namespace AspNetCoreAngular2Starter.Backend
+namespace AspNetCoreAngular2Starter.Backend.Models
 {
     public class Hero
     {
