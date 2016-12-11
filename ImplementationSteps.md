@@ -43,6 +43,12 @@
 * add `systemjs.config.js` and angular JS files to `index.html`
 * ---------- Angular2 simplest example is working here
 
+## EntityFramework
+* Drop database before enabling EF migrations: `dotnet ef database drop -c ApplicationDbContext`
+* Enable and create EF migration: `dotnet ef migrations add InitialCreate -c ApplicationDbContext`
+* Remove EF migrations: `dotnet ef migrations remove`
+* __Apply the migration to the database: `dotnet ef database update -c ApplicationDbContext`__
+
 Core libraries
 ```
 npm install @angular/core --save
