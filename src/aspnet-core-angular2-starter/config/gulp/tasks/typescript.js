@@ -1,17 +1,33 @@
-var gulp = require('gulp');
-var util = require('gulp-util');
-var ts = require('gulp-typescript');
-var sourcemaps = require('gulp-sourcemaps');
-var gulpprint = require('gulp-print');
+var gulp = require('gulp'),
+    util = require('gulp-util'),
+    ts = require('gulp-typescript'),
+    tslint = require('gulp-tslint'),
+    gulpprint = require('gulp-print'),
+    sourcemaps = require('gulp-sourcemaps'),
+    gulpprint = require('gulp-print');
+
 var config = require('../config')();
 
 var tsProject = ts.createProject('Frontend/tsconfig.json');
-
 var tsFiles = config.src.tsFiles; //[].concat(config.tsFiles, tsUnitFiles, tsE2EFiles);
 
 // TypeScript compile
 gulp.task('ts', ['clean-ts'], function () {
     return compileTs(tsFiles);
+});
+
+gulp.task('tslint', function () {
+    util.log('Running tslint...');
+    
+    return gulp.src(tsFiles, { cwd: config.src.app })
+        .pipe(tslint({
+            formatter: 'verbose'
+        }))
+        .pipe(gulpprint())        
+        .pipe(tslint.report({
+            summarizeFailureOutput: true,
+            emitError: true
+        }));
 });
 
 /* Watch changed typescripts file and compile it */
@@ -30,10 +46,14 @@ function compileTs(files, watchMode) {
             cwd: config.src.app,
             outDir: config.dest.app
         })
-        // .pipe(tslint({
-        //     formatter: 'verbose'
-        // }))
-        // .pipe(tslint.report())
+        .pipe(tslint({
+            formatter: 'verbose'
+        }))
+        .pipe(gulpprint())        
+        .pipe(tslint.report({
+            summarizeFailureOutput: true,
+            emitError: false
+        }))
         .pipe(sourcemaps.init())
         .pipe(tsProject())
         .on('error', function () {

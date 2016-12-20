@@ -53,6 +53,12 @@
 			"showOutput": "always"
 		},
         {
+			"taskName": "tslint (gulp)",
+			"isBuildCommand": true,
+            "args": ["gulp tslint"],            
+			"showOutput": "always"
+		},
+        {
             "taskName": "build dotnet",
             "isBuildCommand": true,
             "args": ["dotnet build", ".\\project.json"],
