@@ -29,9 +29,10 @@
     "zone.js": "^0.6.26"
   },
   "devDependencies": {
-    "typescript": "^2.0.10",
+    "@types/core-js": "^0.9.35",
+    "@types/jasmine": "^2.5.38",
+    "@types/node": "^6.0.46",
     "concurrently": "^3.1.0",
-    
     "del": "^2.2.2",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",
@@ -49,9 +50,6 @@
     "lite-server": "^2.2.2",
     "require-dir": "^0.3.1",
     "run-sequence": "^1.2.2",
-
-    "@types/core-js": "^0.9.35",
-    "@types/jasmine": "^2.5.38",
-    "@types/node": "^6.0.46"
+    "typescript": "^2.0.10"
   }
 }
