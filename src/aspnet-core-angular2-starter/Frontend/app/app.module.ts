@@ -17,11 +17,11 @@ import { AboutComponent }       from './about/about.component';
 import { HeroesModule }         from './heroes/heroes.module';
 
 import { ScratchpadComponent }  from './scratchpad/scratchpad.component';
-import { DataService }          from './services/dataService'
+import { DataService }          from './services/dataService';
 import { Configuration }        from './app.constants';
 
 
-import { AppRoutingModule }              from './app-routing.module';
+import { AppRoutingModule }     from './app-routing.module';
 
 @NgModule({
     imports:      [
@@ -41,7 +41,7 @@ import { AppRoutingModule }              from './app-routing.module';
         DataService,
         Configuration
     ],
-    bootstrap:    [ AppComponent ],
+    bootstrap:    [ AppComponent ]
 })
-export class AppModule {
-}
+
+export class AppModule { }

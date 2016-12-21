@@ -10,7 +10,7 @@ export class HomeComponent implements OnInit {
     public message: string;
 
     constructor() {
-        this.message = "Hello from HomeComponent ctor";
+        this.message = 'Hello from HomeComponent ctor';
     }
 
     ngOnInit(): void {

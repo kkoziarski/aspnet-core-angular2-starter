@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from "@angular/router";
+import { RouterModule, Routes } from '@angular/router';
 
-import { LazyHeroesComponent } from "./lazy-heroes.component";
-import { LazyHeroesListComponent } from "./lazy-heroes-list.component";
+import { LazyHeroesComponent } from './lazy-heroes.component';
+import { LazyHeroesListComponent } from './lazy-heroes-list.component';
 import { LazyHeroDetailComponent } from './lazy-hero-detail.component';
 
 import { LazyHeroDetailResolve } from './lazy-hero-detail-resolve.service';

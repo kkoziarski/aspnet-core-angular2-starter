@@ -55,13 +55,13 @@ function compileTs(files, watchMode) {
             emitError: false
         }))
         .pipe(sourcemaps.init())
-        .pipe(tsProject())
-        .on('error', function () {
-            if (watchMode) {
-                return;
-            }
-            process.exit(1);
-        });
+        .pipe(tsProject());
+        // .on('error', function () {
+        //     if (watchMode) {
+        //         return;
+        //     }
+        //     process.exit(1);
+        // });
     return res.js
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest(config.dest.app));

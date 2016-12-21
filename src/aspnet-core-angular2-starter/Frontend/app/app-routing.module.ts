@@ -1,21 +1,21 @@
-import { NgModule, ModuleWithProviders }  from '@angular/core';
+import { NgModule, ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { HomeComponent }        from './home/home.component';
-import { AboutComponent }       from './about/about.component';
-import { ScratchpadComponent }  from './scratchpad/scratchpad.component';
+import { HomeComponent } from './home/home.component';
+import { AboutComponent } from './about/about.component';
+import { ScratchpadComponent } from './scratchpad/scratchpad.component';
 
 const appRoutes: Routes = [
-  { 
-    path: '', 
+  {
+    path: '',
     component: HomeComponent
   },
-  { 
-    path: 'about', 
+  {
+    path: 'about',
     component: AboutComponent
   },
-  { 
-    path: 'scratchpad', 
+  {
+    path: 'scratchpad',
     component: ScratchpadComponent
   },
   {
@@ -32,4 +32,4 @@ const appRoutes: Routes = [
     RouterModule
   ]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

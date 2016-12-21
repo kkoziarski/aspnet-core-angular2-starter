@@ -22,7 +22,7 @@ export class ScratchpadComponent implements OnInit {
         ) {
 
         this.values = [];
-        this.message = "Hello from ScratchpadComponent ctor";
+        this.message = 'Hello from ScratchpadComponent ctor';
     }
 
     ngOnInit(): void {
