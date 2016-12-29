@@ -26,21 +26,21 @@ namespace AspNetCoreAngular2Starter.Backend
         [HttpGet]
         public async Task<IEnumerable<Hero>> Get()
         {
-            return await this.dbContext.Heroes.ToListAsync();
+            return await this.dbContext.Heroes.AsNoTracking().ToListAsync();
         }
 
         // GET api/heroes/5
         [HttpGet("{id}")]
         public async Task<Hero> Get(int id)
         {
-            return await this.dbContext.Heroes.FirstOrDefaultAsync(h => h.Id == id);
+            return await this.dbContext.Heroes.AsNoTracking().FirstOrDefaultAsync(h => h.Id == id);
         }
 
         // GET api/heroes/search/?name=abc
         [HttpGet("Search")]
         public async Task<Hero[]> Search(string name)
         {
-            return await this.dbContext.Heroes.Where(hero => hero.Name.IndexOf(name, StringComparison.OrdinalIgnoreCase) >= 0).ToArrayAsync();
+            return await this.dbContext.Heroes.AsNoTracking().Where(hero => hero.Name.IndexOf(name, StringComparison.OrdinalIgnoreCase) >= 0).ToArrayAsync();
         }
 
         // POST api/heroes
