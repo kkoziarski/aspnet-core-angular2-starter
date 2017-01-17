@@ -41,11 +41,17 @@ gulp.task('watch.ts', function () {
 function compileTs(files, watchMode) {
     watchMode = watchMode || false;
 
+    var srcOptions = {};
+    //a fix, because it works in different way when ('gulp build', 'gulp rebuild') and 'gulp watch'
+    if (watchMode === true) {
+        srcOptions.base = config.src.app;     
+    }
+    else {
+        srcOptions.cwd = config.src.app;
+    }
+
     var allFiles = files; //[].concat(files, typingFiles);
-    var res = gulp.src(allFiles, {
-            cwd: config.src.app,
-            outDir: config.dest.app
-        })
+    var res = gulp.src(allFiles, srcOptions)
         .pipe(tslint({
             formatter: 'verbose'
         }))
