@@ -1,18 +1,51 @@
 ﻿{
+  "webroot": "wwwroot",
+  "version": "1.0.0",
+  "description": "ASP.NET Core with Angular2 starter",
   "dependencies": {
     "Microsoft.NETCore.App": {
-      "version": "1.0.1",
+      "version": "1.0.0",
       "type": "platform"
     },
-    "Microsoft.AspNetCore.Diagnostics": "1.0.0",
-    
-    "Microsoft.AspNetCore.Server.IISIntegration": "1.0.0",
-    "Microsoft.AspNetCore.Server.Kestrel": "1.0.1",
-    "Microsoft.Extensions.Logging.Console": "1.0.0"
+    "Microsoft.AspNetCore.Diagnostics": "1.0.1",
+    "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "1.0.1",
+    "Microsoft.AspNetCore.Mvc": "1.0.2",
+    "Microsoft.AspNetCore.Mvc.TagHelpers": "1.0.2",
+    "Microsoft.AspNetCore.Razor.Tools": {
+      "version": "1.0.0-preview4-final",
+      "type": "build"
+    },
+    "Microsoft.EntityFrameworkCore": "1.0.2",
+    "Microsoft.EntityFrameworkCore.SqlServer": "1.0.2",
+    "Microsoft.EntityFrameworkCore.Design": "1.0.2",
+    "Microsoft.EntityFrameworkCore.SqlServer.Design": "1.0.2",
+    "Microsoft.EntityFrameworkCore.Tools": {
+      "version": "1.0.0-preview3-final",
+      "type": "build"
+    },
+    "Microsoft.AspNetCore.Server.IISIntegration": "1.0.1",
+    "Microsoft.AspNetCore.Server.Kestrel": "1.0.2",
+    "Microsoft.AspNetCore.StaticFiles": "1.0.1",
+    "Microsoft.Extensions.Configuration.EnvironmentVariables": "1.0.1",
+    "Microsoft.Extensions.Configuration.FileExtensions": "1.0.1",
+    "Microsoft.Extensions.Configuration.Abstractions": "1.0.1",
+    "Microsoft.Extensions.Configuration.Json": "1.0.1",
+    "Microsoft.Extensions.Configuration.CommandLine": "1.0.1",
+    "Microsoft.Extensions.Logging": "1.0.1",
+    "Microsoft.Extensions.Logging.Console": "1.0.1",
+    "Microsoft.Extensions.Logging.Debug": "1.0.1",
+    "Microsoft.Extensions.Options.ConfigurationExtensions": "1.0.1",
+    "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.1"
   },
 
   "tools": {
-    "Microsoft.AspNetCore.Server.IISIntegration.Tools": "1.0.0-preview2-final"
+    "Microsoft.AspNetCore.Razor.Tools": "1.0.0-preview4-final",
+    "Microsoft.AspNetCore.Server.IISIntegration.Tools": "1.0.0-preview4-final",
+    "Microsoft.DotNet.Watcher.Tools": {
+      "version": "1.0.0-preview4-final",
+      "imports": "portable-net451+win8"
+    },
+    "Microsoft.EntityFrameworkCore.Tools.DotNet": "1.0.0-preview3-final"
   },
 
   "frameworks": {
@@ -38,11 +71,19 @@
   "publishOptions": {
     "include": [
       "wwwroot",
+      "Views",
+      "Areas/**/Views",
+      "appsettings.json",
       "web.config"
     ]
   },
 
   "scripts": {
+    "prepublish": [ "npm install", "bower install", "gulp rebuild" ],
     "postpublish": [ "dotnet publish-iis --publish-folder %publish:OutputPath% --framework %publish:FullTargetFramework%" ]
+  },
+  
+  "tooling": {
+    "defaultNamespace": "AspNetCoreAngular2Starter"
   }
 }
