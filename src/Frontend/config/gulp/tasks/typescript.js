@@ -8,7 +8,7 @@ var gulp = require('gulp'),
 
 var config = require('../config')();
 
-var tsProject = ts.createProject('Frontend/tsconfig.json');
+var tsProject = ts.createProject('src/tsconfig.json');
 var tsFiles = config.src.tsFiles; //[].concat(config.tsFiles, tsUnitFiles, tsE2EFiles);
 
 // TypeScript compile

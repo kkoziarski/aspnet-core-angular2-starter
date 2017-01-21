@@ -40,7 +40,7 @@ gulp.task('css-min', ['less'], function () {
         config.dest.ignoreDestNpmLibs
     ];
 
-    return gulp.src(destCssFilesToMinify, { base: "./" })
+    return gulp.src(destCssFilesToMinify, { base: "./src/" })
         .pipe(plumber())
         .pipe(cleanCss({ compatibility: 'ie8', sourceMap: true }))
         .pipe(rename({
@@ -54,7 +54,7 @@ gulp.task('css-min', ['less'], function () {
 
 /* Watch changed typescripts file and compile it */
 gulp.task('watch.assets', function () {
-    return gulp.watch(assetFiles, { cwd : config.src.root }, function (file) {
+    return gulp.watch(assetFiles, { base : config.src.app }, function (file) {
         util.log('Copying asset ' + file.path + '...');
         return copyAssets(file.path, true);
     });
@@ -62,15 +62,27 @@ gulp.task('watch.assets', function () {
 
 function copyAssets(files, watchMode) {
     watchMode = watchMode || false;
+    var srcOptions = {};
+    //a fix, because it works in different way when ('gulp build', 'gulp rebuild') and 'gulp watch'
+    // if (watchMode === true) {
+    //     srcOptions.base = config.src.app;     
+    // }
+    // else {
+    //     srcOptions.cwd = config.src.app;
+    // }
+    srcOptions.cwd = config.src.app;
 
     var allFiles = [].concat(files, assetFiles);
-    return gulp.src(allFiles, { base: config.src.app })
+    return gulp.src(allFiles, srcOptions)
         .on('error', function () {
             if (watchMode) {
                 return;
             }
             process.exit(1);
         })
+        .pipe(gulpprint(function (filepath) {
+            return util.colors.green("Copy assets: " + filepath);
+        }))
         .pipe(gulp.dest(config.dest.app));
 }
 

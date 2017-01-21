@@ -1,10 +1,10 @@
 module.exports = function () {
     var //
         config = './config/',
-        srcRoot = './Frontend/',
-        destRoot = "wwwroot/",
+        srcRoot = './src/',
+        destRoot = "../Backend/wwwroot/",
         srcApp = srcRoot + "app/",
-        destApp = "./wwwroot/app/",
+        destApp = "../Backend/wwwroot/app/",
         npmSrc = "./node_modules/",
         npmDstLibs = destRoot + "libs/",
         ignoreDestNpmLibs = '!' + npmDstLibs + '**/*',

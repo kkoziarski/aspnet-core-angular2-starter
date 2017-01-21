@@ -8,7 +8,7 @@ import { HeroService } from '../services/hero.service';
 export class HeroDetailResolve implements Resolve<Hero> {
     constructor(private heroService: HeroService, private router: Router) { }
 
-    resolve(route: ActivatedRouteSnapshot): Promise<Hero> | boolean {
+    resolve(route: ActivatedRouteSnapshot): Promise<Hero> {
         let id = route.params['id'];
         return this.heroService
             .getHero(id)
@@ -17,7 +17,7 @@ export class HeroDetailResolve implements Resolve<Hero> {
                     return hero;
                 } else { // id not found
                     this.router.navigate(['/heroes']);
-                    return false;
+                    return null;
                 }
             });
     }

@@ -9,14 +9,14 @@
         "removeComments": false,
         "noImplicitAny": true,
         "suppressImplicitAnyIndexErrors": true,
-        "outDir": "../wwwroot/app/",
+        "outDir": "../../Backend/wwwroot/app/",
         "typeRoots": [
             "../node_modules/@types/"
         ]
     },
     "exclude": [
         "../node_modules",
-        "../wwwroot/libs"
+        "../../Backend/wwwroot/libs"
     ],
     "compileOnSave": false,
     "buildOnSave": false

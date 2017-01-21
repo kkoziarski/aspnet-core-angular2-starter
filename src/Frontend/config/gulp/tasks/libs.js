@@ -10,7 +10,6 @@ gulp.task("copy-libs", [
     , 'copy-libs:es6-promise'
     , 'copy-libs:rxjs'
     , 'copy-libs:zone-js'
-    , 'copy-libs:reflect-metadata'
     , 'copy-libs:bower-components'
 ]);
 
@@ -47,11 +46,6 @@ gulp.task("copy-libs:rxjs", function () {
 gulp.task("copy-libs:zone-js", function () {
     return gulp.src(config.src.npmLibs + '/zone.js/dist/*.js', { base: config.src.npmLibs + '/zone.js/dist/' })
          .pipe(gulp.dest(config.dest.npmLibs + '/zone.js/'));
-});
-
-gulp.task("copy-libs:reflect-metadata", function () {
-    return gulp.src(config.src.npmLibs + '/reflect-metadata/*.js', { base: config.src.npmLibs + '/reflect-metadata/' })
-         .pipe(gulp.dest(config.dest.npmLibs + '/reflect-metadata/'));
 });
 
 gulp.task("copy-libs:@angular", function () {
