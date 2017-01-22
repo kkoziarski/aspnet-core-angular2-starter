@@ -6,9 +6,9 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceRoot}\\src\\Backend\\bin\\Debug\\netcoreapp1.0\\Backend.dll",
+            "program": "${workspaceRoot}\\bin\\Debug\\netcoreapp1.0\\Backend.dll",
             "args": ["--server.urls","http://localhost:5001"],
-            "cwd": "${workspaceRoot}\\src\\Backend",
+            "cwd": "${workspaceRoot}",
             "stopAtEntry": false,
             "internalConsoleOptions": "openOnSessionStart",
             "launchBrowser": {
@@ -29,7 +29,7 @@
                 "ASPNETCORE_ENVIRONMENT": "Development"
             },
             "sourceFileMap": {
-                "/Views": "${workspaceRoot}/src/Backend/Views"
+                "/Views": "${workspaceRoot}/Views"
             }
         },
         {
@@ -37,32 +37,6 @@
             "type": "coreclr",
             "request": "attach",
             "processId": "${command.pickProcess}"
-        },
-        {
-            "name": "Launch Chrome against localhost, with sourcemaps",
-            "type": "chrome",
-            "request": "launch",
-            "url": "http://localhost:5001",
-            "sourceMaps": true,
-            "webRoot": "${workspaceRoot}/src/Backend/wwwroot"
-        },
-        {
-            "name": "Attach to Chrome, with sourcemaps",
-            "type": "chrome",
-            "request": "attach",
-            "port": 9222,  
-            "url": "http://localhost:5001",
-            "sourceMaps": true,
-            "webRoot": "${workspaceRoot}/src/Backend/wwwroot"
-        },
-        {
-            "name": "Attach to Chrome, without sourcemaps",
-            "type": "chrome",
-            "request": "attach",
-            "port": 9222,  
-            "url": "http://localhost:5001",
-            "sourceMaps": false,
-            "webRoot": "${workspaceRoot}/src/Backend/wwwroot"
         }
     ]
 }

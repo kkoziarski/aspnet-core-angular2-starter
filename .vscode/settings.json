@@ -2,7 +2,11 @@
 {
     // The following will hide the map files in the editor
     "files.exclude": {
+        ".vs/": true,
         "**/*.map": true,
-        "src/aspnet-core-angular2-starter/bin/": true
+        "**/bin/": true,
+        "**/obj/": true,
+        "**/node_modules/": true,
+        "**/bower_components/": true
     }
 }

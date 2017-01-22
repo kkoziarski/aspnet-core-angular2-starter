@@ -1,0 +1,62 @@
+{
+    "version": "0.1.0",
+    "command": "cmd",
+    "isShellCommand": true,
+    "args": ["/C"],
+    "showOutput": "always",
+    "suppressTaskName": true,
+    "options": {
+        "cwd": "${workspaceRoot}\\src"
+    },
+    "tasks": [
+		{
+			"taskName": "ts",
+			"isBuildCommand": true,
+            "args": ["gulp ts"],            
+			"showOutput": "always",
+			"problemMatcher": "$tsc"
+		},
+        {
+			"taskName": "less",
+			"isBuildCommand": true,
+            "args": ["gulp less"],            
+			"showOutput": "always"
+		},
+        {
+			"taskName": "build (gulp)",
+			"isBuildCommand": true,
+            "args": ["gulp build"],                        
+			"showOutput": "always"
+        },
+        {
+			"taskName": "rebuild",
+			"isBuildCommand": true,
+            "args": ["gulp rebuild"],                        
+			"showOutput": "always"
+		},
+		{
+			"taskName": "watch",
+			"isBuildCommand": true,
+            "args": ["gulp watch"],                        
+			"showOutput": "always"
+		},
+		{
+			"taskName": "clean",
+			"isBuildCommand": true,
+            "args": ["gulp clean"],                        
+			"showOutput": "always"
+		},
+		{
+			"taskName": "clean-all",
+			"isBuildCommand": true,
+            "args": ["gulp clean-all"],                        
+			"showOutput": "always"
+		},
+        {
+			"taskName": "tslint",
+			"isBuildCommand": true,
+            "args": ["gulp tslint"],            
+			"showOutput": "always"
+		}
+    ]
+}

@@ -6,80 +6,98 @@
     "showOutput": "always",
     "suppressTaskName": true,
     "options": {
-        "cwd": "${workspaceRoot}\\src\\aspnet-core-angular2-starter"
+        "cwd": "${workspaceRoot}\\src\\Frontend"
     },
     "tasks": [
 		{
 			"taskName": "ts (gulp)",
-			"isBuildCommand": true,
+			"isBuildCommand": false,
             "args": ["gulp ts"],            
 			"showOutput": "always",
 			"problemMatcher": "$tsc"
 		},
         {
 			"taskName": "less (gulp)",
-			"isBuildCommand": true,
+			"isBuildCommand": false,
             "args": ["gulp less"],            
 			"showOutput": "always"
 		},
         {
 			"taskName": "build (gulp)",
-			"isBuildCommand": true,
+			"isBuildCommand": false,
             "args": ["gulp build"],                        
 			"showOutput": "always"
         },
         {
 			"taskName": "rebuild (gulp)",
-			"isBuildCommand": true,
+			"isBuildCommand": false,
             "args": ["gulp rebuild"],                        
 			"showOutput": "always"
 		},
 		{
 			"taskName": "watch",
-			"isBuildCommand": true,
+			"isBuildCommand": false,
             "args": ["gulp watch"],                        
 			"showOutput": "always"
 		},
 		{
 			"taskName": "clean (gulp)",
-			"isBuildCommand": true,
+			"isBuildCommand": false,
             "args": ["gulp clean"],                        
 			"showOutput": "always"
 		},
 		{
 			"taskName": "clean-all (gulp)",
-			"isBuildCommand": true,
+			"isBuildCommand": false,
             "args": ["gulp clean-all"],                        
 			"showOutput": "always"
 		},
         {
 			"taskName": "tslint (gulp)",
-			"isBuildCommand": true,
+			"isBuildCommand": false,
             "args": ["gulp tslint"],            
 			"showOutput": "always"
 		},
         {
+            "taskName": "build",
+            "args": [
+                "dotnet build", 
+                "${workspaceRoot}\\src\\Backend\\project.json"
+            ],
+            "isBuildCommand": true,
+            "problemMatcher": "$msCompile"
+        },
+        {
             "taskName": "build dotnet",
             "isBuildCommand": true,
-            "args": ["dotnet build", ".\\project.json"],
+            "args": [
+                "dotnet build", 
+                "${workspaceRoot}\\src\\Backend\\project.json"],
             "problemMatcher": "$msCompile"
         },
         {
             "taskName": "start dotnet",
             "isBuildCommand": true,
-            "args": ["dotnet run"],
+            "args": [
+                "dotnet run"
+            ],
             "problemMatcher": "$msCompile"
         },
         {
             "taskName": "start dotnet watcher",
             "isBuildCommand": true,
-            "args": ["dotnet watch run"],
+            "args": [
+                "dotnet watch run"
+            ],
             "problemMatcher": "$msCompile"
         },
         {
             "taskName": "restore",
             "isBuildCommand": true,
-            "args": ["dotnet restore", ".\\project.json"],
+            "args": [
+                "dotnet restore", 
+                "${workspaceRoot}\\src\\Backend\\project.json"
+            ],
             "problemMatcher": "$msCompile"
         }
     ]

@@ -39,7 +39,7 @@
   },
 
   "tools": {
-    "Microsoft.AspNetCore.Razor.Tools": "1.0.0-preview4-final",
+    "Microsoft.AspNetCore.Razor.Tools": "1.0.0-preview3-final",
     "Microsoft.AspNetCore.Server.IISIntegration.Tools": "1.0.0-preview4-final",
     "Microsoft.DotNet.Watcher.Tools": {
       "version": "1.0.0-preview4-final",
@@ -79,7 +79,7 @@
   },
 
   "scripts": {
-    "prepublish": [ "npm install", "bower install", "gulp rebuild" ],
+    // "prepublish": [ "npm install", "bower install", "gulp rebuild" ],
     "postpublish": [ "dotnet publish-iis --publish-folder %publish:OutputPath% --framework %publish:FullTargetFramework%" ]
   },
   
