@@ -54,7 +54,7 @@ gulp.task('css-min', ['less'], function () {
 
 /* Watch changed typescripts file and compile it */
 gulp.task('watch.assets', function () {
-    return gulp.watch(assetFiles, { base : config.src.app }, function (file) {
+    return gulp.watch(assetFiles, { cwd : config.src.app }, function (file) {
         util.log('Copying asset ' + file.path + '...');
         return copyAssets(file.path, true);
     });
@@ -64,15 +64,14 @@ function copyAssets(files, watchMode) {
     watchMode = watchMode || false;
     var srcOptions = {};
     //a fix, because it works in different way when ('gulp build', 'gulp rebuild') and 'gulp watch'
-    // if (watchMode === true) {
-    //     srcOptions.base = config.src.app;     
-    // }
-    // else {
-    //     srcOptions.cwd = config.src.app;
-    // }
-    srcOptions.cwd = config.src.app;
+    if (watchMode === true) {
+        srcOptions.base = config.src.app;     
+    }
+    else {
+        srcOptions.cwd = config.src.app;
+    }
 
-    var allFiles = [].concat(files, assetFiles);
+    var allFiles =files; //[].concat(files, assetFiles);
     return gulp.src(allFiles, srcOptions)
         .on('error', function () {
             if (watchMode) {
