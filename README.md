@@ -16,12 +16,14 @@ Angular part is based on the official Angular's [Tour of Heroes](https://angular
 
 # Build steps
 Steps required after downloading this project
-* `cd .\src\aspnet-core-angular2-starter`
+* `cd .\src\Frontend`
 * `> npm install`
+* `> gulp rebuild`
 * `> typings install`
+* `cd .\src\Backend`
 * `> dotnet restore`
 * `> dotnet build`
-* `> gulp rebuild`
+
 
 
 * __`> dotnet run`__
